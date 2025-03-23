@@ -11,7 +11,7 @@ configure_system() {
 
   sudo dnf update -y && sudo dnf upgrade -y
 
-  sudo dnf install -y --setopt=install_weak_deps=False blueman dunst fish ghostty git hyprland hyprland-qtutils hyprlock hyprpaper network-manager-applet pasystray pavucontrol waybar wl-clipboard wofi xdg-desktop-portal-hyprland
+  sudo dnf install -y --setopt=install_weak_deps=False fish ghostty git
 
   # Font
   wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
@@ -25,5 +25,4 @@ configure_system() {
 
   # dots
   cp -r .config/* $HOME/.config
-  curl -L https://gruvbox-wallpapers.pages.dev/wallpapers/irl/kace-rodriguez-p3OzJuT_Dks.jpg -o ~/Pictures/wall.jpg
 }

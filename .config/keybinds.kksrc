@@ -1,0 +1,63 @@
+[Custom Commands][net.local.krunner.sh.desktop]
+Exec=/home/marcus/Repos/dots/.config/krunner.sh
+Name=krunner
+
+[com.mitchellh.ghostty.desktop][Global Shortcuts]
+_launch=Meta+Return
+new-window=
+
+[ksmserver][Global Shortcuts]
+Lock Session=Meta+L; Screensaver
+Log Out=Ctrl+Alt+Del
+LogOut=Meta+Shift+F2
+Reboot=Meta+Shift+F3
+
+[kwin][Global Shortcuts]
+Edit Tiles=Meta+T
+Grid View=Meta+G
+Kill Window=Meta+Shift+Q
+MoveMouseToCenter=Meta+F6
+MoveMouseToFocus=Meta+V
+Overview=Meta+W
+Switch to Desktop 1=Meta+1
+Switch to Desktop 2=Meta+2
+Switch to Desktop 3=Meta+3
+Switch to Desktop 4=Meta+4
+Switch to Desktop 5=Meta+5
+Switch to Next Screen=Meta+Tab
+Walk Through Windows=Meta+Right
+Walk Through Windows (Reverse)=Meta+Left
+Window Close=Meta+Q
+Window Custom Quick Tile Left=Meta+Ctrl+Left
+Window Custom Quick Tile Right=Meta+Ctrl+Right
+Window Maximize=Meta+F
+Window Minimize=Meta+H
+Window On All Desktops=Meta+Shift+F
+Window Quick Tile Left=Meta+Shift+Left
+Window Quick Tile Right=Meta+Shift+Right
+Window to Desktop 1=Meta+!
+Window to Desktop 2=Meta+@
+Window to Desktop 3=Meta+#
+Window to Desktop 4=Meta+$
+Window to Desktop 5=Meta+%
+Window to Next Screen=Meta+X
+view_actual_size=Meta+0
+view_zoom_in=Meta+=; Meta++
+view_zoom_out=Meta+-
+
+[net.local.krunner.sh.desktop][Global Shortcuts]
+_launch=Meta+Space
+
+[org_kde_powerdevil][Global Shortcuts]
+Decrease Keyboard Brightness=Keyboard Brightness Down
+Decrease Screen Brightness=Monitor Brightness Down
+Decrease Screen Brightness Small=Shift+Monitor Brightness Down
+Hibernate=Hibernate
+Increase Keyboard Brightness=Keyboard Brightness Up
+Increase Screen Brightness=Monitor Brightness Up
+Increase Screen Brightness Small=Shift+Monitor Brightness Up
+PowerDown=Power Down
+PowerOff=Meta+Shift+F1; Power Off
+Sleep=Sleep
+Toggle Keyboard Backlight=Keyboard Light On/Off
+powerProfile=Battery; Meta+B
