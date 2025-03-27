@@ -1,27 +1,125 @@
-[Custom Commands][net.local.krunner.sh-2.desktop]
+[ActivityManager][Global Shortcuts]
+switch-to-activity-388b9a13-3fe9-4b7f-adba-283e6675bfab=
+
+[Custom Commands][net.local.krunner.sh-6.desktop]
 Exec=/home/marcus/.config/krunner.sh
 Name=krunner
+
+[KDE Keyboard Layout Switcher][Global Shortcuts]
+Switch to Last-Used Keyboard Layout=
+Switch to Next Keyboard Layout=
+
+[StandardShortcuts]
+AboutApp=
+AboutKDE=
+Activate Next Tab=Ctrl+]; Ctrl+PgDown
+Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+ActualSize=Ctrl+0
+AddBookmark=Ctrl+B
+Back=Alt+Left; Back
+BackwardWord=Ctrl+Left
+Begin=Ctrl+Home
+BeginningOfLine=Home
+Clear=
+Close=Ctrl+W; Ctrl+Esc
+ConfigureNotifications=
+ConfigureToolbars=
+Copy=Ctrl+C; Ctrl+Ins
+CreateFolder=Ctrl+Shift+N
+Cut=Ctrl+X; Shift+Del
+DeleteFile=Shift+Del
+DeleteWordBack=Ctrl+Backspace
+DeleteWordForward=Ctrl+Del
+Deselect=Ctrl+Shift+A
+DocumentBack=Alt+Shift+Left
+DocumentForward=Alt+Shift+Right
+Donate=
+EditBookmarks=
+End=Ctrl+End
+EndOfLine=End
+Find=Ctrl+F
+FindNext=F3
+FindPrev=Shift+F3
+FitToHeight=
+FitToPage=
+FitToWidth=
+Forward=Alt+Right; Forward
+ForwardWord=Ctrl+Right
+FullScreen=Ctrl+Shift+F
+Goto=
+GotoLine=Ctrl+G
+GotoPage=
+Help=F1
+Home=Home Page; Alt+Home
+KeyBindings=Ctrl+Alt+,
+Mail=
+MoveToTrash=Del
+New=Ctrl+N
+Next=PgDown
+NextCompletion=Ctrl+Down
+Open=Ctrl+O
+OpenContextMenu=Shift+F10; Menu
+OpenMainMenu=F10
+OpenRecent=
+Paste=Shift+Ins; Ctrl+V
+Paste Selection=Ctrl+Shift+Ins
+Preferences=Ctrl+Shift+,
+PrevCompletion=Ctrl+Up
+Print=Ctrl+P
+PrintPreview=
+Prior=PgUp
+Quit=Ctrl+Q
+Redo=Ctrl+Shift+Z
+Reload=F5; Refresh
+RenameFile=F2
+Replace=Ctrl+R
+ReportBug=
+Revert=
+RotateDown=Down
+RotateUp=Up
+Save=Ctrl+S
+SaveAs=Ctrl+Shift+S
+SelectAll=Ctrl+A
+ShowHideHiddenFiles=Alt+.; Ctrl+H
+ShowMenubar=Ctrl+M
+ShowStatusbar=
+ShowToolbar=
+Spelling=
+SubstringCompletion=Ctrl+T
+SwitchApplicationLanguage=
+TextCompletion=Ctrl+E
+Undo=Ctrl+Z
+Up=Alt+Up
+WhatsThis=Shift+F1
+Zoom=
+ZoomIn=Ctrl++; Ctrl+=
+ZoomOut=Ctrl+-
 
 [com.mitchellh.ghostty.desktop][Global Shortcuts]
 _launch=Meta+Return
 new-window=
 
+[kaccess][Global Shortcuts]
+Toggle Screen Reader On and Off=
 
-[Custom Commands][net.local.krunner.sh-3.desktop]
-Exec=/home/marcus/.config/krunner.sh
-Name=krunner
+[kcm_touchpad][Global Shortcuts]
+Disable Touchpad=
+Enable Touchpad=
+Toggle Touchpad=
 
-[Custom Commands][net.local.krunner.sh.desktop]
-Exec=/home/marcus/.config/krunner.sh
-Name=krunner
-
-[com.mitchellh.ghostty.desktop][Global Shortcuts]
-_launch=Meta+Return
-new-window=
+[kmix][Global Shortcuts]
+decrease_microphone_volume=Microphone Volume Down
+decrease_volume=Volume Down
+decrease_volume_small=Shift+Volume Down
+increase_microphone_volume=Microphone Volume Up
+increase_volume=Volume Up
+increase_volume_small=Shift+Volume Up
+mic_mute=Microphone Mute; Meta+Volume Mute
+mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Screensaver; Meta+L
+Lock Session=Meta+L; Screensaver
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=Meta+Shift+F2
@@ -102,16 +200,16 @@ Walk Through Windows=Meta+Right
 Walk Through Windows (Reverse)=Meta+Left
 Walk Through Windows Alternative=
 Walk Through Windows Alternative (Reverse)=
-Walk Through Windows of Current Application=
-Walk Through Windows of Current Application (Reverse)=
+Walk Through Windows of Current Application=Alt+`
+Walk Through Windows of Current Application (Reverse)=Alt+~
 Walk Through Windows of Current Application Alternative=
 Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=
 Window Below Other Windows=
 Window Close=Meta+Q
 Window Custom Quick Tile Bottom=
-Window Custom Quick Tile Left=Meta+Ctrl+Left
-Window Custom Quick Tile Right=Meta+Ctrl+Right
+Window Custom Quick Tile Left=
+Window Custom Quick Tile Right=
 Window Custom Quick Tile Top=
 Window Fullscreen=
 Window Grow Horizontal=
@@ -185,16 +283,20 @@ Window to Screen 6=
 Window to Screen 7=
 disableInputCapture=
 view_actual_size=Meta+0
-view_zoom_in=Meta+=; Meta++
+view_zoom_in=Meta++; Meta+=
 view_zoom_out=Meta+-
 
-[net.local.krunner.sh-2.desktop][Global Shortcuts]
-_launch=Meta+Space
+[mediacontrol][Global Shortcuts]
+mediavolumedown=
+mediavolumeup=
+nextmedia=Media Next
+pausemedia=Media Pause
+playmedia=
+playpausemedia=Media Play
+previousmedia=Media Previous
+stopmedia=Media Stop
 
-[net.local.krunner.sh-3.desktop][Global Shortcuts]
-_launch=Meta+Space
-
-[net.local.krunner.sh.desktop][Global Shortcuts]
+[net.local.krunner.sh-6.desktop][Global Shortcuts]
 _launch=Meta+Space
 
 [org.kde.dolphin.desktop][Global Shortcuts]
@@ -209,6 +311,9 @@ _launch=
 RunClipboard=
 _launch=
 
+[org.kde.kscreen.desktop][Global Shortcuts]
+ShowOSD=Display; Meta+P
+
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=
 
@@ -220,12 +325,12 @@ ActiveWindowScreenShot=Meta+Print
 CurrentMonitorScreenShot=
 FullScreenScreenShot=Shift+Print
 OpenWithoutScreenshot=
-RecordRegion=Meta+Shift+R; Meta+R
-RecordScreen=Meta+Alt+R
-RecordWindow=Meta+Ctrl+R
-RectangularRegionScreenShot=Print
-WindowUnderCursorScreenShot=Meta+Ctrl+Print
-_launch=Meta+Shift+S
+RecordRegion=
+RecordScreen=
+RecordWindow=
+RectangularRegionScreenShot=
+WindowUnderCursorScreenShot=
+_launch=
 
 [org_kde_powerdevil][Global Shortcuts]
 Decrease Keyboard Brightness=Keyboard Brightness Down
@@ -236,36 +341,37 @@ Increase Keyboard Brightness=Keyboard Brightness Up
 Increase Screen Brightness=Monitor Brightness Up
 Increase Screen Brightness Small=Shift+Monitor Brightness Up
 PowerDown=Power Down
-PowerOff=Power Off; Meta+Shift+F1
+PowerOff=Power Off
 Sleep=Sleep
 Toggle Keyboard Backlight=Keyboard Light On/Off
+Turn Off Screen=
 powerProfile=Battery; Meta+B
 
 [plasmashell][Global Shortcuts]
-activate application launcher=Alt+F1; Meta
+activate application launcher=
 activate task manager entry 1=
 activate task manager entry 10=
 activate task manager entry 2=
 activate task manager entry 3=
 activate task manager entry 4=
 activate task manager entry 5=
-activate task manager entry 6=Meta+6
-activate task manager entry 7=Meta+7
-activate task manager entry 8=Meta+8
-activate task manager entry 9=Meta+9
+activate task manager entry 6=
+activate task manager entry 7=
+activate task manager entry 8=
+activate task manager entry 9=
 clear-history=
-clipboard_action=Meta+Ctrl+X
-cycle-panels=Meta+Alt+P
+clipboard_action=
+cycle-panels=
 cycleNextAction=
 cyclePrevAction=
 manage activities=
-next activity=Meta+A
-previous activity=Meta+Shift+A
+next activity=
+previous activity=
 repeat_action=
-show dashboard=Ctrl+F12
+show dashboard=
 show-barcode=
 show-on-mouse-pos=
-stop current activity=Meta+S
+stop current activity=
 switch to next activity=
 switch to previous activity=
 toggle do not disturb=
