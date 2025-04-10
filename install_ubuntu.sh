@@ -35,7 +35,8 @@ sudo apt update -y && sudo apt upgrade -y && sudo ubuntu-drivers install && snap
 
 sudo apt install -y "${packages[@]}" --allow-change-held-packages
 
-sudo apt remove firefox gnome-terminal gnome-text-editor dunst i3lock xss-lock
+sudo apt remove -y firefox gnome-terminal gnome-text-editor dunst i3lock xss-lock
+sudo apt autoremove -y
 
 # Chrome
 wget 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm' -O $HOME/Downloads/chrome.rpm
