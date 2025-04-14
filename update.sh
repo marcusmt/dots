@@ -12,6 +12,20 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 # Zed
 curl -f https://zed.dev/install.sh | sh
 
+#FZF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
+
+#Neovim and its dependencies
+wget https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-musl_10.2.0_amd64.deb -O $HOME/Downloads/fd-musl_10.2.0_amd64.deb
+sudo apt install $HOME/Downloads/fd-musl_10.2.0_amd64.deb
+wget https://github.com/BurntSushi/ripgrep/releases/latest/download/ripgrep_14.1.1-1_amd64.deb -O $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
+sudo apt install $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+set -U fish_user_paths /opt/nvim-linux-x86_64/bin $fish_user_paths
+
 # Dots
 cp -r alacritty ~/.config/
 cp -r dunst ~/.config/

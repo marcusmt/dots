@@ -2,7 +2,7 @@
 
 ppa_list=(
   "ppa:git-core/ppa"
-  ppa:fish-shell/release-4
+  "ppa:fish-shell/release-4"
 )
 
 packages=(
@@ -46,7 +46,6 @@ rm -rf $HOME/Downloads/chrome.rpm
 echo "Xft.dpi: 192" | tee $HOME/.Xresources
 sudo sed -i "\$aGTK_THEME=\"Adwaita-dark\"" /etc/environment
 wget -O $HOME/Pictures/wall.jpg https://gruvbox-wallpapers.pages.dev/wallpapers/irl/kace-rodriguez-p3OzJuT_Dks.jpg
-
 
 chmod +x *.sh
 ./alacritty_install.sh
