@@ -40,7 +40,7 @@ sudo snap remove firefox
 sudo apt autoremove -y
 
 # Chrome
-wget 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.deb' -O $HOME/Downloads/chrome.deb
+wget 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' -O $HOME/Downloads/chrome.deb
 sudo apt install $HOME/Downloads/chrome.deb
 rm -rf $HOME/Downloads/chrome.deb
 
