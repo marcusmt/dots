@@ -24,7 +24,6 @@ sudo apt install $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-set -U fish_user_paths /opt/nvim-linux-x86_64/bin $fish_user_paths
 
 # Dots
 cp -r alacritty ~/.config/

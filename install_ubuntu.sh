@@ -35,13 +35,14 @@ sudo apt update -y && sudo apt upgrade -y && sudo ubuntu-drivers install && snap
 
 sudo apt install -y "${packages[@]}" --allow-change-held-packages
 
-sudo apt remove -y firefox gnome-terminal gnome-text-editor dunst i3lock xss-lock
+sudo apt remove -y gnome-terminal gnome-text-editor dunst i3lock xss-lock
+sudo snap remove firefox
 sudo apt autoremove -y
 
 # Chrome
-wget 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm' -O $HOME/Downloads/chrome.rpm
-sudo dnf install $HOME/Downloads/chrome.rpm
-rm -rf $HOME/Downloads/chrome.rpm
+wget 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.deb' -O $HOME/Downloads/chrome.deb
+sudo apt install $HOME/Downloads/chrome.deb
+rm -rf $HOME/Downloads/chrome.deb
 
 echo "Xft.dpi: 192" | tee $HOME/.Xresources
 sudo sed -i "\$aGTK_THEME=\"Adwaita-dark\"" /etc/environment
