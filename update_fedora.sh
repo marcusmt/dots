@@ -1,0 +1,29 @@
+#!/bin/bash
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
+mkdir $HOME/.fonts
+unzip $HOME/Downloads/Hack.zip -d $HOME/.fonts
+fc-cache -fv
+rm $HOME/Downloads/Hack.zip
+
+# Starship
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# Zed
+curl -f https://zed.dev/install.sh | sh
+
+#FZF
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
+
+#Neovim and its dependencies
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+rm -rf nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+
+# Dots
+cp -r alacritty ~/.config/
+cp -r fish ~/.config/
+cp -r zed ~/.config/
+cp -r hypr ~/.config/

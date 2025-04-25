@@ -8,15 +8,14 @@ if ! command -v cargo >/dev/null 2>&1 || ! command -v rustc >/dev/null 2>&1; the
     source "$HOME/.cargo/env"
 fi
 
-sudo apt install -y \
-    cmake pkg-config libfreetype6-dev libfontconfig1-dev \
-    libxcb-xfixes0-dev libxkbcommon-dev python3 libncurses-dev \
-    gzip desktop-file-utils libgtk-3-bin scdoc
+sudo dnf -y install \
+  cmake freetype-devel fontconfig-devel libxcb-devel \
+  libxkbcommon-devel g++ gcc-c++
 
 git clone https://github.com/alacritty/alacritty.git "$SOURCE_DIR"
 cd "$SOURCE_DIR"
 
-cargo build --release --no-default-features --features=x11
+cargo build --release --no-default-features --features=wayland
 sudo cp $SOURCE_DIR/target/release/alacritty /usr/local/bin/alacritty
 
 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
