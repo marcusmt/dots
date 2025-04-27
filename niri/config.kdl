@@ -33,17 +33,11 @@ layout {
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
-        proportion 0.66667
     }
 
     focus-ring {
         width 2
-        active-gradient from="#80c8ffff" to="#bbddffff" angle=45 in="oklch longer hue"
-        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
-    }
-
-    border {
-        off
+        active-gradient from="#b4befeAA" to="#eba0acAA" angle=135
     }
 
     shadow {
@@ -56,14 +50,12 @@ layout {
 }
 
 // spawn-at-startup "alacritty" "-e" "fish"
+spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/marcus/Pictures/wall.jpg"
+//spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 prefer-no-csd
 
 animations {
-    // Uncomment to turn off all animations.
-    // off
-
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    off
 }
 
 window-rule {
@@ -108,7 +100,7 @@ binds {
     Mod+Shift+X { move-column-to-monitor-right; }
 
     Mod+A  { move-workspace-to-monitor-left; }
-    Mod+Ctrl+A  { move-workspace-to-monitor-right; }
+    Mod+Shift+A  { move-workspace-to-monitor-right; }
 
     Mod+Ctrl+Down { move-column-to-workspace-down; }
     Mod+Ctrl+Up   { move-column-to-workspace-up; }
