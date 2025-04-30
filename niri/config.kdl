@@ -61,6 +61,9 @@ spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/marcus/Pictures/wall.jpg"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
+spawn-at-startup "blueman"
+spawn-at-startup "nm-applet"
+
 prefer-no-csd
 
 animations {
