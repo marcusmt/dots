@@ -1,0 +1,28 @@
+@define-color module-bg #1e1e2e;
+
+* {
+    font-family: "Hack Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+
+#waybar {
+    background: rgba(0,0,0,0.5);
+    color: #FFFFFF;
+}
+
+.modules-right {
+    background: transparent;
+}
+
+#clock, #battery, #cpu, #memory, #tray, #notification {
+    padding: 4px 6px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}

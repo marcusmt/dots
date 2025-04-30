@@ -7,6 +7,11 @@ sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 # Niri
 sudo dnf copr enable yalter/niri
 
+# SwayNC
+sudo dnf copr enable erikreider/SwayNotificationCenter
+
 sudo dnf update -y
-sudo dnf install -y akmod-nvidia
+sudo dnf install -y akmod-nvidia mate-polkit pavucontrol waybar SwayNotificationCenter swaybg
 sudo dnf install --setopt=install_weak_deps=False niri
+
+wget https://4kwallpapers.com/images/wallpapers/man-planet-river-3840x2160-15554.jpg -O $HOME/Pictures/wall.jpg

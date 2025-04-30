@@ -26,7 +26,10 @@ output "DP-4" {
 }
 
 layout {
-    gaps 10
+    gaps 4
+    struts {
+        top 2
+    }
     center-focused-column "never"
     default-column-width { proportion 0.5; }
     
@@ -34,10 +37,14 @@ layout {
         proportion 0.33333
         proportion 0.5
     }
-
+    
     focus-ring {
+        off
+    }
+
+    border {
         width 2
-        active-gradient from="#b4befeAA" to="#eba0acAA" angle=135
+        active-gradient from="#6CB6EFAA" to="#94e2d5FF" angle=135
     }
 
     shadow {
@@ -51,7 +58,9 @@ layout {
 
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/marcus/Pictures/wall.jpg"
-//spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+spawn-at-startup "waybar"
+spawn-at-startup "swaync"
 prefer-no-csd
 
 animations {
@@ -75,8 +84,8 @@ binds {
     Super+Alt+L { spawn "swaylock"; }
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
