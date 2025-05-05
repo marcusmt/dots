@@ -26,11 +26,7 @@ output "DP-4" {
 }
 
 layout {
-    gaps 4
-    struts {
-        top 2
-    }
-    center-focused-column "never"
+    center-focused-column "on-overflow"
     default-column-width { proportion 0.5; }
     
     preset-column-widths {
@@ -43,16 +39,18 @@ layout {
     }
 
     border {
+	off
         width 2
-        active-gradient from="#6CB6EFAA" to="#94e2d5FF" angle=135
+        active-gradient from="#FFAB01" to="#2CE8FF" angle=145 in="srgb-linear"
     }
 
     shadow {
-        on
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
+        //on
+        softness 6
+        spread 1
+        offset x=3 y=4
+        color "#000000"
+        draw-behind-window true
     }
 }
 
@@ -79,6 +77,14 @@ window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
 }
+
+window-rule {
+    match is-active=true
+    shadow {
+        on
+    }
+}
+
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
