@@ -2,8 +2,15 @@
 TERM = "xterm-256color"
 
 [window]
-startup_mode = "Maximized"
-padding = { x = 10, y = 10 }
+dynamic_padding = true
+decorations = "full"
+title = "Alacritty"
+opacity = 0.8
+decorations_theme_variant = "Dark"
+
+[window.dimensions]
+columns = 100
+lines = 30
 
 [window.class]
 instance = "Alacritty"
@@ -11,6 +18,34 @@ general = "Alacritty"
 
 [scrolling]
 history = 100000
+multiplier = 3
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "0x2E3440"
+foreground = "0xD8DEE9"
+
+[colors.normal]
+black = "0x3B4252"
+red = "0xBF616A"
+green = "0xA3BE8C"
+yellow = "0xEBCB8B"
+blue = "0x81A1C1"
+magenta = "0xB48EAD"
+cyan = "0x88C0D0"
+white = "0xE5E9F0"
+
+[colors.bright]
+black = "0x4C566A"
+red = "0xBF616A"
+green = "0xA3BE8C"
+yellow = "0xEBCB8B"
+blue = "0x81A1C1"
+magenta = "0xB48EAD"
+cyan = "0x8FBCBB"
+white = "0xECEFF4"
 
 [font]
 normal.family = "Hack Nerd Font"
@@ -18,64 +53,96 @@ bold.family = "Hack Nerd Font"
 italic.family = "Hack Nerd Font"
 bold_italic.family = "Hack Nerd Font"
 
-[cursor]
-style.blinking = "On"
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
 
-[terminal]
-shell = { program = "fish", args = ["-l"] }
+[cursor]
+style = "Underline"
+vi_mode_style = "None"
+unfocused_hollow = true
+thickness = 0.15
+
+[mouse]
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
 
 [keyboard]
-bindings = [
-    { key = "=", mods = "Alt", action = "IncreaseFontSize" },
-    { key = "-", mods = "Alt", action = "DecreaseFontSize" },
-    { key = "Up", mods = "Alt", action = "ScrollPageUp" },
-    { key = "Down", mods = "Alt", action = "ScrollPageDown" },
-    { key = "Up", mods = "Alt|Shift", action = "ScrollHalfPageUp" },
-    { key = "Down", mods = "Alt|Shift", action = "ScrollHalfPageDown" },
-    { key = "k", mods = "Alt", action = "SpawnNewInstance" },
-    { key = "k", mods = "Alt", action = "Quit" },
-    { key = "f", mods = "Alt", action = "SearchForward" },
-    { key = "f", mods = "Alt|Shift", action = "SearchBackward" },
-]
+[[keyboard.bindings]]
+key = "Paste"
+action = "Paste"
 
-[colors]
-draw_bold_text_with_bright_colors = true
+[[keyboard.bindings]]
+key = "Copy"
+action = "Copy"
 
-# Colors (Kanagawa Dragon)
-# Source https//github.com/rebelot/kanagawa.nvim
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+action = "ClearLogNotice"
 
-[colors.primary]
-background = '#181616'
-foreground = '#c5c9c5'
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+mode = "~Vi"
+chars = "\f"
 
-[colors.normal]
-black = '#0d0c0c'
-blue = '#8ba4b0'
-cyan = '#8ea4a2'
-green = '#8a9a7b'
-magenta = '#a292a3'
-red = '#c4746e'
-white = '#C8C093'
-yellow = '#c4b28a'
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageUp"
 
-[colors.bright]
-black = '#a6a69c'
-blue = '#7FB4CA'
-cyan = '#7AA89F'
-green = '#87a987'
-magenta = '#938AA9'
-red = '#E46876'
-white = '#c5c9c5'
-yellow = '#E6C384'
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollPageDown"
 
-[colors.selection]
-background = '#2d4f67'
-foreground = '#c8c093'
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToTop"
 
-[[colors.indexed_colors]]
-index = 16
-color = '#ffa066'
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+mode = "~Alt"
+action = "ScrollToBottom"
 
-[[colors.indexed_colors]]
-index = 17
-color = '#ff5d62'
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Control|Shift"
+action = "SearchBackward"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+mode = "Vi"
+action = "ClearSelection"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[general]
+live_config_reload = true
+working_directory = "None"

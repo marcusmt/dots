@@ -22,6 +22,11 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 # Zen
 curl -fsSL https://raw.githubusercontent.com/sannidhyaroy/updates-server/refs/heads/feat/root-installation/install-as-root.sh | sudo bash
 
+# Eza
+git clone https://github.com/eza-community/eza.git
+cd eza
+cargo install --path .
+
 # Dots
 cp -r niri ~/.config/
 cp -r swaync ~/.config/

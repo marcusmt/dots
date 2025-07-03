@@ -25,6 +25,7 @@ curl -fsS https://dl.brave.com/install.sh | sh
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh
+. "$HOME/.cargo/env"
 
 cp wall.jpg $HOME/Pictures/wall.jpg
 
