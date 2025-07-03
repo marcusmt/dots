@@ -10,5 +10,4 @@ alias ll='eza -l --color=always --group-directories-first --icons'
 alias lt='eza -aT --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -e '^\.'"
 
-# curl -sS https://starship.rs/install.sh | sh -s -- -y
 starship init fish | source

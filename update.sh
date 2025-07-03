@@ -2,7 +2,7 @@
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
 mkdir $HOME/.fonts
-unzip $HOME/Downloads/Hack.zip -d $HOME/.fonts
+unzip -o $HOME/Downloads/Hack.zip -d $HOME/.fonts
 fc-cache -fv
 rm $HOME/Downloads/Hack.zip
 
@@ -16,7 +16,15 @@ rm -rf nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
+# Starship
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# Zen
+curl -fsSL https://raw.githubusercontent.com/sannidhyaroy/updates-server/refs/heads/feat/root-installation/install-as-root.sh | sudo bash
+
 # Dots
 cp -r niri ~/.config/
 cp -r swaync ~/.config/
 cp -r waybar ~/.config/
+cp -r alacritty ~/.config/
+cp -r fish ~/.config/
