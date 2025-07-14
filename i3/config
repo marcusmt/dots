@@ -1,12 +1,12 @@
 set $mod Mod4
 font pango: Hack Nerd Font 0
 floating_modifier $mod
-gaps inner 4
+gaps inner 6
 smart_gaps on
 focus_wrapping workspace
-default_border pixel 1
-for_window [class=.*] border pixel 1
-default_floating_border pixel 1
+default_border pixel 0
+for_window [class=.*] border pixel 0
+default_floating_border pixel 0
 
 exec                          --no-startup-id dex --autostart --environment i3
 exec                          --no-startup-id nm-applet
@@ -31,8 +31,7 @@ bindsym $mod+Shift+c          reload
 bindsym $mod+Shift+r          restart
 
 # Screen control
-bindsym $mod+w                layout tabbed
-bindsym $mod+e                layout toggle split
+bindsym $mod+e                layout toggle splith tabbed
 bindsym $mod+x                move workspace to output next
 
 # Media control
@@ -40,6 +39,8 @@ bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAUL
 bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $HOME/.config/i3/media_control.sh volume
 bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $HOME/.config/i3/media_control.sh volume
 bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessUp   exec --no-startup-id $HOME/.config/i3/media_control.sh brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/i3/media_control.sh brightness_down
 
 # Window movement control
 bindsym $mod+f                fullscreen toggle
@@ -67,15 +68,19 @@ bindsym $mod+Shift+3 move container to workspace number $ws3
 bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 
-set $focused   #ebdbb2
-set $unfocused #3c3836
-# target                 title      bg         text       indicator  border
-client.focused           $focused   $focused   $focused   $focused   $focused
-client.focused_inactive  $unfocused $unfocused $unfocused $unfocused $unfocused
-client.unfocused         $unfocused $unfocused $unfocused $unfocused $unfocused
-client.urgent            $focused   $focused   $focused   $focused   $focused
-client.placeholder       $focused   $focused   $focused   $focused   $focused
-client.background        $focused
+set $rosewater #f5e0dc
+set $peach #fab387
+set $lavender #b4befe
+set $overlay0 #6c7086
+set $base #1e1e2e
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 bar {
     font pango:Hack Nerd Font 12

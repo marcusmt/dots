@@ -2,7 +2,7 @@
 
 # github https://github.com/Shringe/dunst-media-control
 
-brightness_step=10
+brightness_step=100
 notification_timeout=10000 # in milliseconds
 backlight_device="intel_backlight" # Make this configurable
 
@@ -56,7 +56,7 @@ case $1 in
     brightness_up)
     current_brightness=$(get_brightness)
     upValue=$((current_brightness + brightness_step))
-    upValue=$((upValue > 100 ? 100 : upValue)) # Clip to 100
+    upValue=$((upValue > 400 ? 400 : upValue)) # Clip to 100
     brightnessctl -d "$backlight_device" set "$upValue" && show_brightness_notif || notify-send "Error setting brightness"
     ;;
 
