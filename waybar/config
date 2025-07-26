@@ -1,0 +1,63 @@
+{
+	"layer": "top",
+    "position": "top",
+    "reload_style_on_change": true,
+    "modules-right": ["custom/notification","tray"],
+    "modules-center": ["clock"],
+    "modules-left": ["memory","cpu","wireplumber","battery"],
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "<b></b>",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
+
+    "clock": {
+        "format": " {:%H:%M}  ",
+		"format-alt": " {:L%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<span size='9pt' font='Hack Nerd Font'>{calendar}</span>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<b>{}</b>",
+                "days":       "{}",
+                "weeks":      "<span color='#99ffdd'>W{}</span>",
+                "weekdays":   "<b>{}</b>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "battery": {
+        "interval": 45,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": " {capacity}% {icon} ",
+        "format-charging": " {capacity}% 󰂄 ",
+        "format-plugged": " {capacity}%  ",
+        "format-alt": " {time} {icon} ",
+        "format-icons": ["󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"]
+    },
+    "cpu": {
+        "format": " {}% 󰻠 "
+    },
+    "memory": {
+        "format": " {}%  "
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+	"wireplumber": {
+		"format": " {volume}% {icon} ",
+		"format-muted": "",
+		"on-click": "pavucontrol",
+		"format-icons": ["", "", ""]
+	}
+}

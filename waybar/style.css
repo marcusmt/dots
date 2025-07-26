@@ -1,0 +1,99 @@
+/* --- Color Palette --- */
+/* You can easily change these to any theme you like */
+@define-color background transparent;
+@define-color foreground #FFFFFF;
+@define-color module-bg alpha(#1E1E2E, 0.0);
+@define-color calendar-bg alpha(#1E1E2E, 0.8);
+@define-color accent #89B4FA;
+@define-color warning #F9E2AF;
+@define-color critical #F38BA8;
+
+/* --- Global --- */
+* {
+    font-family: "Hack Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* --- Waybar --- */
+#waybar {
+    background: @background;
+    color: @foreground;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
+}
+
+/* --- Modules --- */
+#clock,
+#battery,
+#cpu,
+#memory,
+#tray,
+#wireplumber,
+#custom-notification {
+    background-color: @module-bg;
+    padding: 4px 12px;
+    margin: 4px 3px;
+    border-radius: 10px;
+}
+
+/* --- Module States --- */
+#battery.warning {
+    color: @warning;
+}
+
+#battery.critical {
+    color: @critical;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* --- Specific Modules --- */
+#custom-notification {
+    color: @foreground;
+    padding: 4px 8px; /* Making the icon a bit tighter */
+}
+
+#tray {
+    background-color: transparent;
+}
+
+/* --- Calendar Tooltip Styling --- */
+calendar {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: @module-bg;
+    border: 1px solid @accent;
+}
+
+calendar.header {
+    border-bottom: 1px solid @foreground;
+    margin-bottom: 5px;
+}
+
+calendar.button {
+    color: @accent;
+}
+
+calendar.highlight {
+    color: @critical;
+    font-weight: bold;
+}
+
+calendar:selected {
+    background-color: @critical;
+    color: @calendar-bg;
+}
+
+/* --- Animations --- */
+@keyframes blink {
+    to {
+        color: @foreground;
+        background-color: @critical;
+    }
+}
