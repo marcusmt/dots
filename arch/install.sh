@@ -1,19 +1,17 @@
 #!/bin/sh
 
 packages=(
-  "hyprland"
-  "wofi"
-  "bluez"
-  "bluez-utils"
   "qt6ct"
   "gnome-themes-extra"
   "nwg-look"
   "ttf-hack-nerd"
   "brightnessctl"
-  "hyprlock"
-  "waybar"
-  "swaync"
   "eza"
+  "i3"
+  "plasma-x11-session"
+  "dunst"
+  "picom"
+  "feh"
 )
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
