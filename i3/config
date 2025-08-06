@@ -1,14 +1,17 @@
 set $mod Mod4
-font pango: Hack Nerd Font 0
+font pango: Hack Nerd Font 8
 floating_modifier $mod
 gaps inner 6
 smart_gaps on
 focus_wrapping workspace
 default_border pixel 0
-for_window [class=.*] border pixel 0
 default_floating_border pixel 0
+floating_maximum_size -1 x -1
+for_window [class=.*] border pixel 0
+for_window [all] title_window_icon on
+for_window [class="floating_window"] floating enable
 
-exec feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 exec --no-startup-id dunst
 exec --no-startup-id picom
@@ -96,21 +99,3 @@ bar {
         statusline #FFFFFF
     }
 }
-
-########################################################################
-########################################################################
-####
-####                   Floated windows
-####
-########################################################################
-########################################################################
-
-#for_window [title="Calculator"] floating enable
-#for_window [title="Timer"] floating enable
-#for_window [class="^.*"] border pixel 0
-#for_window [class="librewolf"] border none
-#for_window [class="firefox"] border none
-#for_window [class="mpv"] floating enable
-#for_window [class="imv"] floating enable
-#for_window [class="zenity"] floating enable
-#for_window [class="cachyos-welcome"] floating enable
