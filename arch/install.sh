@@ -1,17 +1,37 @@
 #!/bin/sh
 
-packages=(
-  "qt6ct"
-  "gnome-themes-extra"
+packages-x11=(
   "nwg-look"
-  "ttf-hack-nerd"
-  "brightnessctl"
-  "eza"
   "i3"
   "plasma-x11-session"
   "dunst"
   "picom"
   "feh"
+)
+
+packages-wayland=(
+  "hypridle"
+  "hyprlock"
+  "wl-clip-persist"
+  "grim"
+  "slurp"
+  "xwaylandvideobridge-git"
+  "xdg-desktop-portal-hyprland"
+  "swaybg"
+  "swaync"
+  "waybar"
+  "swayosd-git"
+  "qt5-wayland"
+  "qt6-wayland"
+  
+)
+
+packages-common=(
+  "qt6ct"
+  "gnome-themes-extra"
+  "ttf-hack-nerd"
+  "brightnessctl"
+  "eza"
 )
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y

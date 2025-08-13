@@ -2,9 +2,9 @@
 	"layer": "top",
     "position": "top",
     "reload_style_on_change": true,
-    "modules-right": ["custom/notification","tray"],
-    "modules-center": ["clock"],
-    "modules-left": ["memory","cpu","wireplumber","battery"],
+    "modules-right": ["custom/notification","tray", "clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-left": ["memory","cpu","wireplumber","battery","bluetooth"],
 
     "custom/notification": {
         "tooltip": false,
@@ -59,5 +59,34 @@
 		"format-muted": "",
 		"on-click": "pavucontrol",
 		"format-icons": ["", "", ""]
-	}
+	},
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "active": "󱓻"
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "systemsettings",
+    "on-click-right": "bluedevil-wizard"
+  }
 }

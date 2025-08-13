@@ -32,6 +32,8 @@
 #memory,
 #tray,
 #wireplumber,
+#bluetooth,
+#hyprland-workspaces,
 #custom-notification {
     background-color: @module-bg;
     padding: 4px 12px;
