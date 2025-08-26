@@ -1,212 +1,53 @@
-/* --- Color Palette --- */
-/* You can easily change these to any theme you like */
+@define-color foreground #d8dee9;
 @define-color background transparent;
-@define-color foreground #FFFFFF;
-@define-color module-bg alpha(#1E1E2E, 0.0);
-@define-color calendar-bg alpha(#1E1E2E, 0.8);
-@define-color accent #89B4FA;
-@define-color warning #F9E2AF;
-@define-color critical #F38BA8;
-
-/* --- Global --- */
-* {
-    font-family: "Hack Nerd Font";
-    font-weight: bold;
-    font-size: 13px;
-}
 
 * {
-    border: none;
-    border-radius: 3px;
-    min-height: 0;
-    margin: 0.2em 0.3em 0.2em 0.3em;
+  background-color: @background;
+  color: @foreground;
+
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Hack Nerd Font;
+  font-size: 17px;
 }
 
-/* The whole bar */
-#waybar {
-    background-color: transparent;
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    border-radius: 0px;
-    margin: 0px 0px;
+.modules-left {
+  margin-left: 8px;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
+.modules-right {
+  margin-right: 8px;
 }
 
 #workspaces button {
-    padding: 3px 5px;  /* Adjusted padding to reduce height */
-    margin: 3px 5px;    /* Reduced margin slightly */
-    border-radius: 6px;
-    color: @foreground;
-    background-color: #111827;
-    transition: all 0.3s ease-in-out;
-    font-size: 13px;  /* Slightly smaller font size */
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
 }
 
-#workspaces button.active {
-    color: @foreground;
-    background: #025939;
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
-#workspaces button:hover {
-    background: #333333;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#workspaces {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Adjusted padding to reduce height */
-}
-
-#window {
-    background-color: #111827;
-    font-size: 15px;   /* Slightly smaller font size */
-    font-weight: 800;
-    color: @foreground;
-    border-radius: 14px;
-    padding: 3px 6px;  /* Reduced padding */
-    margin: 2px;
-    opacity: 1;
-}
-
-#tray {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
-}
-
-#cpu {
-    color: #fb958b;
-    background-color: #111827;
-    padding: 6px;
-}
-
-#memory {
-    color: #ebcb8b;
-    background-color: #111827;
-    padding: 6px;
-}
-
-#custom-power {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
-#backlight {
-    color: #8fbcbb;
-}
-
-#battery {
-    color: #c0caf5;
-}
-
-#battery.charging,
-#battery.full,
-#battery.plugged {
-    color: #26a65b;
-}
-
-@keyframes blink {
-    to {
-        background-color: rgba(30, 34, 42, 0.5);
-        color: #abb2bf;
-    }
-}
-
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#bluetooth {
-    color: #707d9d;
-}
-
-#bluetooth.disconnected {
-    color: #f53c3c;
-}
-
-#network {
-    color: #b48ead;
-}
-
-#network.disconnected {
-    color: #f53c3c;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-/* --- Calendar Tooltip Styling --- */
-calendar {
-    border-radius: 8px;
-    padding: 8px;
-    background-color: @module-bg;
-    border: 1px solid @accent;
-}
-
-calendar.header {
-    border-bottom: 1px solid @foreground;
-    margin-bottom: 5px;
-}
-
-calendar.button {
-    color: @accent;
-}
-
-calendar.highlight {
-    color: @critical;
-    font-weight: bold;
-}
-
-calendar:selected {
-    background-color: @critical;
-    color: @calendar-bg;
-}
-
-#clock,
-#battery,
+#tray,
 #cpu,
 #memory,
-#backlight,
+#battery,
 #network,
-#wireplumber,
-#mode,
 #bluetooth,
-#custom-power-menu {
-    background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;  /* Adjusted padding */
+#wireplumber,
+#custom-notification,
+#clock {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
+
+tooltip {
+  padding: 2px;
 }

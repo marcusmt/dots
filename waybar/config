@@ -1,172 +1,150 @@
 {
-    "layer": "top",
-    "position": "top",
-    "margin-left": 10,
-    "margin-bottom": 0,
-    "margin-right": 10,
-    "spacing": 5,
-
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "backlight",
-        "memory",
-        "cpu",
-        "battery",
-        "wireplumber",
-        "bluetooth",
-        "custom/notification",
-        "tray",
-        "custom/power"
-    ],
-
-    "clock": {
-        "format": " {:%H:%M}  ",
-		    "format-alt": " {:L%A, %B %d, %Y (%R)}  ",
-        "tooltip-format": "<span size='9pt' font='Hack Nerd Font'>{calendar}</span>",
-        "calendar": {
-            "mode"          : "year",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
-            "format": {
-                "months":     "<b>{}</b>",
-                "days":       "{}",
-                "weeks":      "<span color='#99ffdd'>W{}</span>",
-                "weekdays":   "<b>{}</b>",
-                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        }
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 6,
+  "height": 26,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right": [
+    "group/tray-expander",
+    "bluetooth",
+    "wireplumber",
+    "cpu",
+    "memory",
+    "network",
+    "battery",
+    "custom/notification",
+  ],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻"
     },
-
-    "memory": {
-        "interval": 30,
-        "format": "  {used:0.2f} / {total:0.0f} GB",
-        "on-click": "alacritty -e btop"
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "hyprland/window": {
+    "max-length": 30,
+    "separate-outputs": true
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "󰍛 {usage}%",
+    "on-click": "ghostty -e btop"
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {used:0.2f}GB",
+    "on-click": "alacritty -e btop"
+  },
+  "clock": {
+    "format": "{:%A %H:%M}",
+    "format-alt": "{:%d %B W%V %Y}",
+    "tooltip": false,
+  },
+  "network": {
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "format" : "{icon}",
+    "format-wifi" : "{icon}",
+    "format-ethernet" : "󰀂",
+    "format-disconnected" : "󰖪",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "nospacing": 1,
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-discharging": "{icon}",
+    "format-charging":    "{icon}",
+    "format-plugged":     "",
+    "format-icons": {
+      "charging": [
+        "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"
+      ],
+      "default": [
+        "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+      ]
     },
-
-    "battery": {
-        "interval": 2,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+    "format-full": "󰂅",
+    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "bluedevil-wizard"
+  },
+  "wireplumber": {
+    "on-click": "pavucontrol",
+    "on-click-right": "amixer sset Master toggle 1>/dev/null",
+    "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+    "format-muted": "󰖁",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [" ", " ", " "]
     },
-    
-    "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format": "",
-        "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-        "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
-        "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
-        "interval": 10
+  },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
     },
-    
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl s 5%-",
-        "on-scroll-up": "brightnessctl s +5%"
-    },
-
-    "custom/power": {
-        "format": " 󰐥 ",
-        "tooltip": false,
-        "on-click": "wlogout"
-    },
-
-    "cpu": {
-        "interval": 1,
-        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
-        "max-length": 13,
-        "min-length": 13
-    },
-
-    
-    "hyprland/workspaces": {
-        "on-click": "activate",
-        "active-only": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-        },
-        "persistent-workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": []
-        }
-    },
-
-    "hyprland/window": {
-        "max-length": 100,
-        "separate-outputs": true
-    },
-
-    "wireplumber": {
-        "on-click": "pavucontrol",
-        "on-click-right": "amixer sset Master toggle 1>/dev/null",
-        "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
-        "format-muted": "󰖁 ",
-        "format-source": "",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [" ", " ", " "]
-        },
-    },
-
-    "tray": {
-        "icon-size": 15,
-        "spacing": 5
-    },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "󰂲",
-        "format-connected": "",
-        "tooltip-format": "Devices connected: {num_connections}",
-        "on-click": "systemsettings",
-        "on-click-right": "bluedevil-wizard"
-    },
-    "custom/notification": {
-        "tooltip": false,
-        "format": "<b></b>",
-        "on-click": "swaync-client -t -sw",
-        "escape": true
-    },
+    "modules": [
+      "custom/expand-icon",
+    "tray"
+    ]
+  },
+  "custom/expand-icon": {
+    "format": " ",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 12
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<b></b>",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  }
 }
