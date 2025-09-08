@@ -6,20 +6,16 @@
   "height": 26,
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/window"
   ],
   "modules-center": [
     "clock",
   ],
   "modules-right": [
-    "group/tray-expander",
     "bluetooth",
     "wireplumber",
-    "cpu",
-    "memory",
     "network",
     "battery",
-    "custom/notification",
+    "group/tray-expander"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -45,20 +41,6 @@
       "5": []
     }
   },
-  "hyprland/window": {
-    "max-length": 30,
-    "separate-outputs": true
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "󰍛 {usage}%",
-    "on-click": "ghostty -e btop"
-  },
-  "memory": {
-    "interval": 30,
-    "format": " {used:0.2f}GB",
-    "on-click": "alacritty -e btop"
-  },
   "clock": {
     "format": "{:%A %H:%M}",
     "format-alt": "{:%d %B W%V %Y}",
@@ -75,6 +57,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
+    "on-click": "ghostty -e nmtui"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -96,19 +79,20 @@
     "states": {
       "warning": 20,
       "critical": 10
-    }
+    },
+    "on-click": "$HOME/.local/bin/power-profile.sh"
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "bluedevil-wizard"
+    "on-click": "overskride"
   },
   "wireplumber": {
-    "on-click": "pavucontrol",
+    "on-click": "pwvucontrol",
     "on-click-right": "amixer sset Master toggle 1>/dev/null",
-    "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+    "format": "{icon}",
     "format-muted": "󰖁",
     "format-source": "",
     "format-source-muted": "",
@@ -134,17 +118,11 @@
     ]
   },
   "custom/expand-icon": {
-    "format": " ",
+    "format": " ",
     "tooltip": false
   },
   "tray": {
     "icon-size": 12,
     "spacing": 12
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "<b></b>",
-    "on-click": "swaync-client -t -sw",
-    "escape": true
   }
 }

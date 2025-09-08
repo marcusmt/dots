@@ -10,4 +10,6 @@ alias ll='eza -l --color=always --group-directories-first --icons'
 alias lt='eza -aT --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -e '^\.'"
 alias cat="bat"
+alias cd="z"
+zoxide init fish | source
 starship init fish | source

@@ -1,0 +1,32 @@
+/* --------------
+   DND Variables
+   -------------- */
+:root {
+  --dnd-label-margin: 8px;
+  --dnd-label-size: 1.1rem;
+  --dnd-border-radius: 12px;
+}
+
+/* ------
+   Label
+   ------ */
+.widget-dnd > label {
+  margin: var(--dnd-label-margin);
+  font-size: var(--dnd-label-size);
+}
+
+/* --------------------------
+   Toggle (Switch) Container
+   -------------------------- */
+.widget-dnd switch {
+  background-color: var(--dnd-switch-bg);
+  border-radius: var(--dnd-border-radius);
+  margin: var(--dnd-label-margin);
+  transition: background 0.15s ease-in-out;
+}
+
+/* Checked state (DND enabled) */
+.widget-dnd switch:checked {
+  background-color: var(--dnd-switch-checked-bg);
+}
+
