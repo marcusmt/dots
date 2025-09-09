@@ -6,7 +6,7 @@ sudo pacman -Syu
 declare -a packages=(
   bat
   brave-bin
-  cliphist'
+  cliphist
   eza
   fish
   fzf
