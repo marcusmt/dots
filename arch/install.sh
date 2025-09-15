@@ -4,37 +4,27 @@ sudo pacman -Syu
 
 # Define a single, sorted array of all packages
 declare -a packages=(
-  bat
   brave-bin
   cliphist
-  eza
-  fish
-  fzf
-  ghostty-git
   gnome-themes-extra
   grim
   hypridle
   hyprlock
   hyprpolkitagent
-  jq
-  nvim
-  otf-font-awesome
+  neovim
   overskride
   papirus-icon-theme
   pwvucontrol
   qt5-wayland
-  qt5ct
   qt6-wayland
   qt6ct
-  ripgrep
-  slurp
   swappy
-  swaybg
   swaync
   swayosd
   thunar
+  tumbler
+  xdg-desktop-portal-gtk
   wl-clip-persist
-  wl-clipboard
   zoxide
 )
 
@@ -54,8 +44,5 @@ rm -rf ~/.config/nvim/.git
 ./1password.sh
 
 ./dots.sh
-
-# Remove unwanted packages
-paru -R micro cachyos-micro-settings pavucontrol
 
 echo "Instalação concluída!"
