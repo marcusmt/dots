@@ -8,8 +8,6 @@ declare -a packages=(
   cliphist
   gnome-themes-extra
   grim
-  hypridle
-  hyprlock
   hyprpolkitagent
   neovim
   overskride
@@ -23,7 +21,8 @@ declare -a packages=(
   swayosd
   thunar
   tumbler
-  xdg-desktop-portal-gtk
+  waybar
+  wofi
   wl-clip-persist
   zoxide
 )

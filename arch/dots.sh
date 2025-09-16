@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cp -r ../hypr $HOME/.config/
+cp -r ../niri $HOME/.config/
 cp -r ../fish $HOME/.config/
 cp -r ../swaync $HOME/.config/
 cp -r ../waybar $HOME/.config/
