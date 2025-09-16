@@ -18,7 +18,6 @@ declare -a packages=(
   qt6-wayland
   qt6ct
   swappy
-  swaylock
   swaync
   swayosd
   thunar
