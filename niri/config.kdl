@@ -19,7 +19,7 @@ output "eDP-1" {
 binds {
     Mod+Return     { spawn-sh "alacritty"; }
     Mod+Space      { spawn-sh "wofi"; }
-    Mod+L          { spawn-sh "swaylock"; }
+    Mod+T          { spawn-sh "swaylock"; }
     Mod+Shift+M     { quit; }
     Mod+Z          { spawn-sh "swaync-client -dn"; }
     Mod+Ctrl+Z     { spawn-sh "swaync-client -df"; }
@@ -82,7 +82,6 @@ spawn-sh-at-startup "swaybg -i ~/.config/niri/gruv-mistakes.png -m fill"
 spawn-sh-at-startup "waybar"
 spawn-sh-at-startup "swayosd-server"
 spawn-sh-at-startup "/usr/lib/xdg-desktop-portal-hyprland"
-spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "swaync"

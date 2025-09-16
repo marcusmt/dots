@@ -8,6 +8,7 @@ declare -a packages=(
   cliphist
   gnome-themes-extra
   grim
+  hyprland-qt-support
   hyprpolkitagent
   neovim
   overskride
@@ -17,10 +18,13 @@ declare -a packages=(
   qt6-wayland
   qt6ct
   swappy
+  swaylock
   swaync
   swayosd
   thunar
   tumbler
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland
   waybar
   wofi
   wl-clip-persist
