@@ -1,0 +1,10 @@
+include $HOME/.config/i3/looknfeel.conf
+include $HOME/.config/i3/keybinds.conf
+
+set $mod Mod4
+
+exec_always feh --bg-fill ~/.config/i3/wallpaper.png
+
+exec --no-startup-id dunst
+exec --no-startup-id picom
+

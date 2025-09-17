@@ -5,27 +5,20 @@ sudo pacman -Syu
 # Define a single, sorted array of all packages
 declare -a packages=(
   brave-bin
-  cliphist
   gnome-themes-extra
   grim
-  hypridle
-  hyprlock
-  hyprpolkitagent
   neovim
   overskride
   papirus-icon-theme
-  pwvucontrol
-  qt5-wayland
-  qt6-wayland
+  pavucontrol
   qt6ct
-  swappy
-  swaync
-  swayosd
   thunar
+  ttf-hack-nerd
+  feh
   tumbler
   xdg-desktop-portal-gtk
-  wl-clip-persist
   zoxide
+  ksnip
 )
 
 # Install Starship
