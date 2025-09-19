@@ -48,22 +48,21 @@
     mouse_right_click = close_all
 
     progress_bar_corner_radius = 4
+    
+    [global]
+        frame_color = "#89b4fa"
+        separator_color= frame
+        highlight = "#89b4fa"
 
     [urgency_low]
-        background  = "#131721"
-        foreground  = "#FFFFFF"
-        frame_color = "#131721"
-        highlight   = "#BFBDB6"
-        timeout = 5s
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+
     [urgency_normal]
-        background = "#131721"
-        foreground = "#FFFFFF"
-        frame_color = "#131721"
-        highlight   = "#BFBDB6"
-        timeout = 10s
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+
     [urgency_critical]
-        background = "#131721"
-        foreground = "#FFFFFF"
-        frame_color= "#131721"
-        highlight   = "#BFBDB6"
-        timeout = 0
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+        frame_color = "#fab387"

@@ -19,6 +19,9 @@ packages=(
   "arandr"
   "feh"
   "ksnip"
+  "blueman"
+  "pavucontrol"
+  "pasystray"
 )
 
 for ppa in "${ppa_list[@]}"; do

@@ -12,3 +12,6 @@ mkdir -p build
 meson setup build
 meson compile -C build
 sudo ninja -C build install
+
+cd $HOME
+rm -rf $HOME/Downloads/i3
