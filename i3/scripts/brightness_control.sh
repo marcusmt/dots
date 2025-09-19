@@ -49,3 +49,4 @@ brightness_down)
   exit 1
   ;;
 esac
+

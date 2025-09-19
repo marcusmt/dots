@@ -1,16 +1,12 @@
-
 [env]
 TERM = "xterm-256color"
-
-[terminal]
-shell = { program = "fish", args = ["-l"] }
+WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
 dynamic_padding = true
 decorations = "full"
-title = "Alacritty"
+title = "Alacritty@CachyOS"
 decorations_theme_variant = "Dark"
-opacity = 0.89
 
 [window.dimensions]
 columns = 100
@@ -21,7 +17,7 @@ instance = "Alacritty"
 general = "Alacritty"
 
 [scrolling]
-history = 100000
+history = 10000
 multiplier = 3
 
 [colors]
@@ -52,10 +48,23 @@ cyan = "0x8FBCBB"
 white = "0xECEFF4"
 
 [font]
-normal.family = "Hack Nerd Font"
-bold.family = "Hack Nerd Font"
-italic.family = "Hack Nerd Font"
-bold_italic.family = "Hack Nerd Font"
+size = 12
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
@@ -68,6 +77,8 @@ unfocused_hollow = true
 thickness = 0.15
 
 [mouse]
+hide_when_typing = true
+
 [[mouse.bindings]]
 mouse = "Middle"
 action = "PasteSelection"
