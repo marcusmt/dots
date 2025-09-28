@@ -4,27 +4,41 @@ sudo pacman -Syu
 
 # Define a single, sorted array of all packages
 declare -a packages=(
+  awesome-terminal-fonts
   brave-bin
+  brightnessctl
   cliphist
   gnome-themes-extra
   grim
   hypridle
   hyprlock
   hyprpolkitagent
+  kvantum
   neovim
+  noto-fonts
+  noto-fonts-emoji
+  otf-font-awesome
   overskride
   papirus-icon-theme
   pwvucontrol
   qt5-wayland
+  qt5ct
   qt6-wayland
   qt6ct
+  slurp
   swappy
+  swaybg
   swaync
   swayosd
   thunar
+  ttf-font-awesome
   tumbler
-  xdg-desktop-portal-gtk
+  waybar
   wl-clip-persist
+  wl-clipboard
+  wofi
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-hyprland
   zoxide
 )
 
