@@ -22,6 +22,12 @@ packages=(
   "blueman"
   "pavucontrol"
   "pasystray"
+  "i3lock"
+  "i3status"
+  "brightnessctl"
+  "thunar"
+  "tumbler"
+  "rofi"
 )
 
 for ppa in "${ppa_list[@]}"; do

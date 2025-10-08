@@ -30,16 +30,16 @@ function show_brightness_notif {
 
 case "$1" in
 brightness_up)
-  local current_brightness_raw=$(get_brightness_raw)
-  local max_brightness_raw=$(get_max_brightness_raw)
-  local upValue=$((current_brightness_raw + brightness_step))
+  current_brightness_raw=$(get_brightness_raw)
+  max_brightness_raw=$(get_max_brightness_raw)
+  upValue=$((current_brightness_raw + brightness_step))
   upValue=$((upValue > max_brightness_raw ? max_brightness_raw : upValue))
   brightnessctl -d "$backlight_device" set "$upValue" && show_brightness_notif || notify-send "Error setting brightness"
   ;;
 
 brightness_down)
-  local current_brightness_raw=$(get_brightness_raw)
-  local downValue=$((current_brightness_raw - brightness_step))
+  current_brightness_raw=$(get_brightness_raw)
+  downValue=$((current_brightness_raw - brightness_step))
   downValue=$((downValue < 0 ? 0 : downValue))
   brightnessctl -d "$backlight_device" set "$downValue" && show_brightness_notif || notify-send "Error setting brightness"
   ;;
@@ -49,4 +49,3 @@ brightness_down)
   exit 1
   ;;
 esac
-
