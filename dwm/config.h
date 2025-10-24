@@ -14,15 +14,16 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;
 static const unsigned int gappx     = 6;
 static const char *fonts[]          = { "Hack Nerd Font:size=10" };
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray1[]       = "#00141d";
+static const char col_gray2[]       = "#80bfff";
+static const char col_gray3[]       = "#FFFFFF";
+static const char col_gray4[]       = "#1a1a1a";
+static const char col_cyan[]        = "#b3e5fc"; /* was #6CF982  */
+static const char col_barbie[]      = "#4fc3f7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray4 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_barbie  },
 };
 
 /* tagging */
