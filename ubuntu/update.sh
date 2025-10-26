@@ -2,7 +2,7 @@
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
 mkdir $HOME/.fonts
-unzip $HOME/Downloads/Hack.zip -d $HOME/.fonts
+unzip -o $HOME/Downloads/Hack.zip -d $HOME/.fonts
 fc-cache -fv
 rm $HOME/Downloads/Hack.zip
 
@@ -17,20 +17,25 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
 #Neovim and its dependencies
-wget https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-musl_10.2.0_amd64.deb -O $HOME/Downloads/fd-musl_10.2.0_amd64.deb
-sudo apt install $HOME/Downloads/fd-musl_10.2.0_amd64.deb
-rm -rf $HOME/Downloads/fd-musl_10.2.0_amd64.deb
-wget https://github.com/BurntSushi/ripgrep/releases/latest/download/ripgrep_14.1.1-1_amd64.deb -O $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
-sudo apt install $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
-rm -rf $HOME/Downloads/ripgrep_14.1.1-1_amd64.deb
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-sudo rm -rf /opt/nvim-linux-x86_64
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo mkdir -p /opt/nvim
+wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz -O $HOME/Downloads/nvim.tar.gz
+sudo tar --strip-components=1 -xvf $HOME/Downloads/nvim.tar.gz -C /opt/nvim
+rm $HOME/Downloads/nvim.tar.gz
+
+# Zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# EZA
+cargo install eza
+
+# Bat
+cargo install --locked bat
+
+# Update Apps
+./picom.sh
 
 # Dots
-cp -r alacritty ~/.config/
-cp -r dunst ~/.config/
-cp -r fish ~/.config/
-cp -r i3 ~/.config/
-cp -r picom ~/.config/
-cp -r zed ~/.config/
+cp -r ../fish $HOME/.config/
+cp -r ../picom $HOME/.config/
+cp -r ../rofi $HOME/.config/
