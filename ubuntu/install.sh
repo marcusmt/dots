@@ -30,6 +30,7 @@ packages=(
   "pasystray"
   "pavucontrol"
   "papirus-icon-theme"
+  "curl"
 )
 
 for ppa in "${ppa_list[@]}"; do
@@ -42,6 +43,9 @@ sudo apt install -y "${packages[@]}" --allow-change-held-packages
 
 sudo snap remove firefox
 sudo apt autoremove -y
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Brave
 curl -fsS https://dl.brave.com/install.sh | sh
@@ -60,8 +64,5 @@ sudo sed -i "\$aGTK_THEME=\"Adwaita-dark\"" /etc/environment
 # Nvim
 git clone https://github.com/LazyVim/starter $HOME/.config/nvim
 rm -rf $HOME/.config/nvim/.git
-
-# Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ./update.sh

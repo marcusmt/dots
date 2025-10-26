@@ -39,3 +39,4 @@ cargo install --locked bat
 cp -r ../fish $HOME/.config/
 cp -r ../picom $HOME/.config/
 cp -r ../rofi $HOME/.config/
+cp -r ../rio $HOME/.config/
