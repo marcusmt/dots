@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+./x11_install.sh
+
 cd ../../dwm
 sudo make install
 
@@ -18,3 +20,6 @@ Comment=Dynamic window manager
 Exec=dwm
 Type=XSession
 EOF
+
+cp -r ../picom $HOME/.config/
+cp -r ../rofi $HOME/.config/

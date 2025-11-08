@@ -37,6 +37,3 @@ cargo install --locked bat
 
 # Dots
 cp -r ../fish $HOME/.config/
-cp -r ../picom $HOME/.config/
-cp -r ../rofi $HOME/.config/
-cp -r ../rio $HOME/.config/
