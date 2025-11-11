@@ -32,8 +32,5 @@ cargo install eza
 # Bat
 cargo install --locked bat
 
-# Update Apps
-./picom.sh
-
 # Dots
 cp -r ../fish $HOME/.config/
