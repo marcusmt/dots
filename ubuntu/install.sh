@@ -68,7 +68,7 @@ hypr)
   common
   ./danklinux_install.sh
   cp -r ../hypr/ $HOME/.config/
-  sudo apt install -y swappy xdg-desktop-portal-hyprland hyprpolkitagent
+  sudo apt install -y swappy xdg-desktop-portal-hyprland hyprpolkitagent hyprland-qt-support0
   sudo cp ../hyprland-portals.conf /usr/share/xdg-desktop-portal/
   ;;
 *)
