@@ -31,9 +31,6 @@ common() {
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   . "$HOME/.cargo/env"
 
-  # Brave
-  curl -fsS https://dl.brave.com/install.sh | sh
-
   # 1Password
   wget https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb -O $HOME/Downloads/1password.deb
   sudo apt -y install $HOME/Downloads/1password.deb
@@ -64,7 +61,15 @@ dwm)
   ;;
 niri)
   common
-  ./niri_install
+  ./danklinux_install.sh
+  cp -r ../niri/ $HOME/.config/
+  ;;
+hypr)
+  common
+  ./danklinux_install.sh
+  cp -r ../hypr/ $HOME/.config/
+  sudo apt install -y swappy xdg-desktop-portal-hyprland hyprpolkitagent
+  sudo cp ../hyprland-portals.conf /usr/share/xdg-desktop-portal/
   ;;
 *)
   echo -e "${RED}Error: Invalid option '$1'${NC}"

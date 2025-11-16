@@ -1,0 +1,6 @@
+#include <tunables/global>
+/opt/helium/chrome flags=(unconfined) {
+  #include <abstractions/base>
+  #include <abstractions/ubuntu-browsers>
+  userns,
+}   

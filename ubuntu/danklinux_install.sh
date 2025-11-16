@@ -4,8 +4,6 @@ packages=(
   "libxcb-cursor-dev"
 )
 
-sudo apt install -y "${packages[@]}" --allow-change-held-packages
+sudo apt install -y "${packages[@]}"
 
 curl -fsSL https://install.danklinux.com | sh
-
-cp -r ../niri $HOME/.config/
