@@ -3,14 +3,14 @@ set -e
 
 ./x11_install.sh
 
-cd ../../dwm
+cd ../dwm
 sudo make install
 
 cd ../dwm-bar
 sudo make install
 
 mkdir $HOME/.dwm
-cp ../../autostart.sh $HOME/.dwm
+cp ../autostart.sh $HOME/.dwm
 
 sudo mkdir -p /usr/share/xsessions
 cat <<EOF | sudo tee /usr/share/xsessions/dwm.desktop >/dev/null
