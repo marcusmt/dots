@@ -79,7 +79,6 @@ static const Key keys[] = {
 	{ MODKEY,                XK_x,                       tagmon,            {.i = -1 } },
   { MODKEY|ShiftMask,      XK_Left,                    pushup,            {.i = +1 } },
   { MODKEY|ShiftMask,      XK_Right,                   pushdown,          {.i = -1 } },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
   TAGKEYS(                 XK_1,                                          0)
 	TAGKEYS(                 XK_2,                                          1)
 	TAGKEYS(                 XK_3,                                          2)
@@ -96,10 +95,9 @@ static const Key keys[] = {
   { MODKEY,                XK_l,                       spawn,             SHCMD("i3lock") },
   { MODKEY,                XK_z,                       spawn,             SHCMD("dunstctl set-paused true") },
   { MODKEY|ShiftMask,      XK_z,                       spawn,             SHCMD("dunstctl set-paused false") },
-  { MODKEY|Mod1Mask,       XK_1,                       spawn,             SHCMD("$HOME/.screenlayout/single.sh") },
-  { MODKEY|Mod1Mask,       XK_2,                       spawn,             SHCMD("$HOME/.screenlayout/work.sh") },
-  { MODKEY|Mod1Mask,       XK_3,                       spawn,             SHCMD("$HOME/.screenlayout/home.sh") },
-  { MODKEY|Mod1Mask,       XK_4,                       spawn,             SHCMD("$HOME/.screenlayout/headless.sh") },
+  { MODKEY|ControlMask,    XK_1,                       spawn,             SHCMD("$HOME/.screenlayout/headless.sh") },
+  { MODKEY|ControlMask,    XK_2,                       spawn,             SHCMD("$HOME/.screenlayout/work.sh") },
+  { MODKEY|ControlMask,    XK_3,                       spawn,             SHCMD("$HOME/.screenlayout/home.sh") },
   { 0,                     XF86XK_AudioRaiseVolume,    spawn,             SHCMD("wpctl set-volume -l 1.0 @DEFAULT_SINK@ 0.05+;  $HOME/.dwm/volume_notify.sh") },
   { 0,                     XF86XK_AudioLowerVolume,    spawn,             SHCMD("wpctl set-volume @DEFAULT_SINK@ 0.05-;  $HOME/.dwm/volume_notify.sh") },
   { 0,                     XF86XK_AudioMute,           spawn,             SHCMD("wpctl set-mute   @DEFAULT_SINK@ toggle; $HOME/.dwm/volume_notify.sh") },
