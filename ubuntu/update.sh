@@ -32,20 +32,9 @@ cargo install eza
 # Bat
 cargo install --locked bat
 
-# Helium
-sudo rm -rf /opt/helium/
-sudo mkdir /opt/helium
-URL=$(wget -qO- https://api.github.com/repos/imputnet/helium-linux/releases/latest |
-  grep "browser_download_url.*x86_64_linux\.tar\.xz" |
-  sed -E 's/.*"browser_download_url": "(.*)".*/\1/')
-FILE_PATH="$HOME/Downloads/helium-latest.tar.xz"
-wget -q -O "$FILE_PATH" "$URL"
-sudo tar --strip-components=1 -xvf "$FILE_PATH" -C /opt/helium/
-rm "$FILE_PATH"
-sudo cp /opt/helium/helium.desktop /usr/share/applications/
-sudo cp ../helium-browser /etc/apparmor.d/
-sudo apparmor_parser -a /etc/apparmor.d/helium-browser
-sudo systemctl reload apparmor
+# Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/Downloads/chrome.deb
+sudo apt install $HOME/Downloads/chrome.deb
 
 # Dots
 cp -r ../fish $HOME/.config/

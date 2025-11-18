@@ -31,6 +31,7 @@ packages=(
   "thunar"
   "tumbler"
   "feh"
+  "lxappearance"
 )
 
 for ppa in "${ppa_list[@]}"; do
@@ -41,4 +42,4 @@ sudo apt install -y "${packages[@]}" --allow-change-held-packages
 
 echo "Xft.dpi: 192" | tee $HOME/.Xresources
 # TODO add the new commands to have the theme correctly configured
-sudo sed -i "\$aGTK_THEME=\"Adwaita-dark\"" /etc/environment
+sudo sed -i "\$aGTK2_RC_FILES=\"/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc\"\nQT_STYLE_OVERRIDE=\"Adwaita-Dark\"\nGTK_THEME=\"Adwaita-dark\"" /etc/environment

@@ -25,5 +25,5 @@ EOF
 
 cp -r ../picom $HOME/.config/
 cp -r ../rofi $HOME/.config/
-cp -r ../dunst $HOME/.confg/
+cp -r ../dunst $HOME/.config/
 cp -r ../scripts/* $HOME/.dwm/
