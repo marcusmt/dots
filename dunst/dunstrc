@@ -1,0 +1,68 @@
+[global]
+    # Geometry
+    width = 300
+    origin = top-right
+    offset = (30, 20)
+
+    indicate_hidden = yes
+    transparency = 0
+    height = (0, 60)  # Dynamic height with a maximum of 60 pixels
+    separator_height = 2
+    frame_width = 1
+    sort = yes
+    idle_threshold = 120s
+
+    font = "Hack Nerd Font 8"
+    line_height = 0
+    markup = full
+
+    format = "%i<b>%s</b>\n%b\n%p"
+
+    alignment = left
+    show_age_threshold = 60s
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 32
+
+    enable_recursive_icon_lookup = true
+    icon_theme = Papirus-Dark
+
+    sticky_history = yes
+    history_length = 20
+    dmenu = "/usr/bin/dmenu -p dunst:"
+    browser = "/usr/bin/google-chrome-stable"
+    always_run_script = true
+    title = "Dunst"
+    class = "Dunst"
+    # 'startup_notification' and 'verbosity' are no longer valid options
+    corner_radius = 4
+    ignore_dbusclose = false
+    force_xinerama = false
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+    progress_bar_corner_radius = 4
+    
+    [global]
+        frame_color = "#89b4fa"
+        separator_color= frame
+        highlight = "#89b4fa"
+
+    [urgency_low]
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+
+    [urgency_normal]
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+
+    [urgency_critical]
+        background = "#1e1e2e"
+        foreground = "#cdd6f4"
+        frame_color = "#fab387"

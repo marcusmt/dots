@@ -13,6 +13,7 @@ packages=(
   "build-essential"
   "cmake"
   "curl"
+  "libfuse2"
 )
 
 common() {
@@ -65,7 +66,7 @@ niri)
   cp -r ../niri/ $HOME/.config/
   ;;
 hypr)
-  ./danklinux_install.sh  
+  ./danklinux_install.sh
   common
   cp -r ../hypr/ $HOME/.config/
   sudo apt install -y swappy xdg-desktop-portal-hyprland hyprpolkitagent hyprland-qt-support0

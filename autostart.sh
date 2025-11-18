@@ -5,6 +5,11 @@ APPS=(
   "slstatus"
   "picom"
   "pasystray"
+  "dunst"
+  "nm-applet"
+  "blueman-applet"
+  "network-manager-gnome"
+  "/usr/libexec/polkit-mate-authentication-agent-1"
 )
 
 for cmd in "${APPS[@]}"; do
@@ -13,3 +18,5 @@ for cmd in "${APPS[@]}"; do
     $cmd &
   fi
 done
+
+feh --bg-fill ~/Pictures/wallpaper.jpg &

@@ -49,10 +49,8 @@ static const int   lockfullscreen = 1; /* 1 will force focus on the fullscreen w
 static const int   refreshrate = 120;  /* refresh rate (per second) for client move/resize */
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
 	{ "[M]",      monocle },
   { "III",      horizontal },
-	{ "[]=",      tile },    /* first entry is default */
 };
 
 /* key definitions */
@@ -73,8 +71,7 @@ static const Key keys[] = {
 	{ MODKEY,                XK_Right,                   focusstack,        {.i = +1 } },
 	{ MODKEY,                XK_Left,                    focusstack,        {.i = -1 } },
 	{ MODKEY,                XK_w,                       killclient,        {0} },
-	{ MODKEY,                XK_e,                       setlayout,         {0}},
-	{ MODKEY,                XK_f,                       setlayout,         {.v = &layouts[2]} },
+	{ MODKEY,                XK_f,                       setlayout,         {0}},
 	{ MODKEY|ShiftMask,      XK_space,                   togglefloating,    {0} },
 	{ MODKEY,                XK_0,                       view,              {.ui = ~0 } },
 	{ MODKEY|ShiftMask,      XK_0,                       tag,               {.ui = ~0 } },
@@ -103,12 +100,12 @@ static const Key keys[] = {
   { MODKEY|Mod1Mask,       XK_2,                       spawn,             SHCMD("$HOME/.screenlayout/work.sh") },
   { MODKEY|Mod1Mask,       XK_3,                       spawn,             SHCMD("$HOME/.screenlayout/home.sh") },
   { MODKEY|Mod1Mask,       XK_4,                       spawn,             SHCMD("$HOME/.screenlayout/headless.sh") },
-  { 0,                     XF86XK_AudioRaiseVolume,    spawn,             SHCMD("wpctl set-volume -l 1.0 @DEFAULT_SINK@ 0.05+;  $HOME/.config/i3/scripts/volume_notify.sh") },
-  { 0,                     XF86XK_AudioLowerVolume,    spawn,             SHCMD("wpctl set-volume @DEFAULT_SINK@ 0.05-;  $HOME/.config/i3/scripts/volume_notify.sh") },
-  { 0,                     XF86XK_AudioMute,           spawn,             SHCMD("wpctl set-mute   @DEFAULT_SINK@ toggle; $HOME/.config/i3/scripts/volume_notify.sh") },
-  { 0,                     XF86XK_Tools,               spawn,             SHCMD("wpctl set-mute @DEFAULT_SOURCE@ toggle;  $HOME/.config/i3/scripts/mic_notify.sh") },
-  { 0,                     XF86XK_MonBrightnessUp,     spawn,             SHCMD("$HOME/.config/i3/scripts/brightness_control.sh brightness_up") },
-  { 0,                     XF86XK_MonBrightnessDown,   spawn,             SHCMD("$HOME/.config/i3/scripts/brightness_control.sh brightness_down") },
+  { 0,                     XF86XK_AudioRaiseVolume,    spawn,             SHCMD("wpctl set-volume -l 1.0 @DEFAULT_SINK@ 0.05+;  $HOME/.dwm/volume_notify.sh") },
+  { 0,                     XF86XK_AudioLowerVolume,    spawn,             SHCMD("wpctl set-volume @DEFAULT_SINK@ 0.05-;  $HOME/.dwm/volume_notify.sh") },
+  { 0,                     XF86XK_AudioMute,           spawn,             SHCMD("wpctl set-mute   @DEFAULT_SINK@ toggle; $HOME/.dwm/volume_notify.sh") },
+  { 0,                     XF86XK_Tools,               spawn,             SHCMD("wpctl set-mute @DEFAULT_SOURCE@ toggle;  $HOME/.dwm/mic_notify.sh") },
+  { 0,                     XF86XK_MonBrightnessUp,     spawn,             SHCMD("$HOME/.dwm/brightness_control.sh brightness_up") },
+  { 0,                     XF86XK_MonBrightnessDown,   spawn,             SHCMD("$HOME/.dwm/brightness_control.sh brightness_down") },
 };
 
 /* button definitions */                                      

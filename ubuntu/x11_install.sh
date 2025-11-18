@@ -21,6 +21,16 @@ packages=(
   "pasystray"
   "pavucontrol"
   "papirus-icon-theme"
+  "maim"
+  "i3lock"
+  "ksnip"
+  "brightnessctl"
+  "mate-polkit"
+  "arandr"
+  "blueman"
+  "thunar"
+  "tumbler"
+  "feh"
 )
 
 for ppa in "${ppa_list[@]}"; do
@@ -30,4 +40,5 @@ done
 sudo apt install -y "${packages[@]}" --allow-change-held-packages
 
 echo "Xft.dpi: 192" | tee $HOME/.Xresources
+# TODO add the new commands to have the theme correctly configured
 sudo sed -i "\$aGTK_THEME=\"Adwaita-dark\"" /etc/environment

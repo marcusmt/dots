@@ -2,6 +2,8 @@
 set -e
 
 ./x11_install.sh
+./picom.sh
+./dunst.sh
 
 cd ../dwm
 sudo make install
@@ -23,3 +25,5 @@ EOF
 
 cp -r ../picom $HOME/.config/
 cp -r ../rofi $HOME/.config/
+cp -r ../dunst $HOME/.confg/
+cp -r ../scripts/* $HOME/.dwm/
