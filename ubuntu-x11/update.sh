@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt update -y
+sudo apt upgrade -y
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
 mkdir $HOME/.fonts
 unzip -o $HOME/Downloads/Hack.zip -d $HOME/.fonts
@@ -32,9 +35,7 @@ cargo install eza
 # Bat
 cargo install --locked bat
 
-# Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O $HOME/Downloads/chrome.deb
-sudo apt install $HOME/Downloads/chrome.deb
-
 # Dots
 cp -r ../fish $HOME/.config/
+./picom.sh
+./dunst.sh

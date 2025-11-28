@@ -18,7 +18,6 @@ packages=(
   "libnotify-dev"
   "libusb-0.1-4"
   "rofi"
-  "pasystray"
   "pavucontrol"
   "papirus-icon-theme"
   "maim"
@@ -27,9 +26,6 @@ packages=(
   "brightnessctl"
   "mate-polkit"
   "arandr"
-  "blueman"
-  "thunar"
-  "tumbler"
   "feh"
   "lxappearance"
 )

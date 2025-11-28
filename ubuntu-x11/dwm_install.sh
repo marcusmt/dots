@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
+./x11_install.sh
+
 cd ../dwm
 sudo make install
 
 cd ../dwm-bar
 sudo make install
 
-mkdir -p $HOME/.dwm
+mkdir $HOME/.dwm
 cp ../autostart.sh $HOME/.dwm
 
 sudo mkdir -p /usr/share/xsessions

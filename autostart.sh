@@ -4,11 +4,7 @@ APPS=(
   "/usr/lib/polkit-1/polkitd --no-debug --log-level=notice"
   "slstatus"
   "picom"
-  "pasystray"
   "dunst"
-  "nm-applet"
-  "blueman-applet"
-  "network-manager-gnome"
   "/usr/libexec/polkit-mate-authentication-agent-1"
 )
 
