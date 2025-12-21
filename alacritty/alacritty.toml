@@ -1,0 +1,177 @@
+[general]
+import = [
+  "~/.config/alacritty/dank-theme.toml"
+]
+
+# ============================================================================
+# Shell
+# ============================================================================
+[terminal.shell]
+program = "/usr/bin/zsh"
+
+# ============================================================================
+# Window
+# ============================================================================
+[window]
+decorations = "None"
+padding = { x = 12, y = 12 }
+opacity = 1.0
+dynamic_padding = false
+startup_mode = "Windowed"  # or "Maximized" if you prefer
+
+# ============================================================================
+# Scrolling
+# ============================================================================
+[scrolling]
+history = 10000  # Increased from 3023
+multiplier = 3
+
+# ============================================================================
+# Font
+# ============================================================================
+[font]
+size = 11.0
+
+# You can customize fonts like this:
+# [font.normal]
+# family = "JetBrains Mono"
+# style = "Regular"
+
+# [font.bold]
+# family = "JetBrains Mono"
+# style = "Bold"
+
+# [font.italic]
+# family = "JetBrains Mono"
+# style = "Italic"
+
+# ============================================================================
+# Cursor
+# ============================================================================
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+blink_timeout = 0  # Never stop blinking
+unfocused_hollow = true
+vi_mode_style = "Block"
+
+# ============================================================================
+# Mouse
+# ============================================================================
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+mouse = "Middle"
+action = "PasteSelection"
+
+# ============================================================================
+# Selection
+# ============================================================================
+[selection]
+save_to_clipboard = true  # Changed to true for better Wayland clipboard integration
+
+# ============================================================================
+# Bell
+# ============================================================================
+[bell]
+duration = 0
+
+# ============================================================================
+# Environment variables
+# ============================================================================
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"  # Prevent weird scaling issues
+
+# ============================================================================
+# Keyboard bindings
+# ============================================================================
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Equals"
+mods = "Control|Shift"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "Enter"
+mods = "Shift"
+chars = "\n"
+
+# Search mode
+[[keyboard.bindings]]
+key = "F"
+mods = "Control|Shift"
+action = "SearchForward"
+
+# Clear screen
+[[keyboard.bindings]]
+key = "K"
+mods = "Control|Shift"
+action = "ClearHistory"
+
+# Vi mode (optional but useful)
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control|Shift"
+mode = "~Search"
+action = "ToggleViMode"
+
+# Scrolling with keyboard
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "Shift"
+action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "Shift"
+action = "ScrollPageDown"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+
+# ============================================================================
+# Performance & Wayland/NVIDIA optimizations
+# ============================================================================
+[debug]
+# Set to false for production use
+render_timer = false
+persistent_logging = false
+
+# Prefer to draw text using GLES2 (better for NVIDIA on Wayland)
+# This is handled automatically, but you can force it if needed
+renderer = "Glsl3"  # or "glsl3" - uncomment if you have rendering issues
+
+[terminal]
