@@ -1,0 +1,18 @@
+{
+    "layer": "top",
+    "position": "right",
+    "height": 30,
+    "modules-left": [],
+    "modules-center": [],
+    "modules-right": ["tray", "clock"],
+    
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    
+    "tray": {
+        "spacing": 10
+    }
+}
