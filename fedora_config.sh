@@ -3,7 +3,6 @@
 packages=(
   "git"
   "fish"
-  "sway"
   "alacritty"
   "iwl*-firmware"
   "akmod-nvidia"
@@ -16,11 +15,8 @@ packages=(
   "tuned"
   "kernel-tools"
   "lm_sensors"
-  "NetworkManager-tui"
-  "mate-polkit.x86_64"
   "gnome-themes-extra"
   "papirus-icon-theme"
-  "mako"
 )
 
 # RPM Fusion repos
