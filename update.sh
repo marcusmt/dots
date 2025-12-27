@@ -16,7 +16,10 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 cargo install eza
 
 # Bat
-cargo install --locked bat
+cargo install bat
+
+# Ripgrep
+cargo install ripgrep
 
 # FZF
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
