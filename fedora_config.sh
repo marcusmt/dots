@@ -2,6 +2,7 @@
 
 packages=(
   "git"
+  "fish"
   "sway"
   "alacritty"
   "iwl*-firmware"
@@ -59,6 +60,14 @@ echo 'force_drivers+=" nvidia nvidia_modeset nvidia_uvm nvidia_drm "' | sudo tee
 if ! grep -q "nvidia-drm.modeset=1" /proc/cmdline; then
   sudo grubby --update-kernel=ALL --args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia-drm.modeset=1"
 fi
+
+echo "Waiting for NVIDIA kernel module to build..."
+sudo akmods --force
+until modinfo -F version nvidia &>/dev/null; do
+  echo -n "."
+  sleep 5
+done
+echo " done!"
 
 sudo dracut --force
 
