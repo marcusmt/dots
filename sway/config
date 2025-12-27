@@ -1,0 +1,54 @@
+exec /usr/libexec/polkit-mate-authentication-agent-1
+exec mako
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+}
+
+xwayland disable
+
+# Define colors (catppuccin mocha)
+set $rosewater #f5e0dc
+set $mauve #cba6f7
+set $red #f38ba8
+set $peach #fab387
+set $lavender #b4befe
+set $text #cdd6f4
+set $overlay0 #6c7086
+set $base #1e1e2e
+set $crust #11111b
+set $surface2 #585b70
+
+bar {
+    font pango:Hack Nerd Font 12
+    status_command i3status --config ~/.config/sway/i3status.conf
+    position top
+    colors {
+        background         $base
+        statusline         $text
+        focused_statusline $text
+        separator          $base
+        # target           border bg        text
+        focused_workspace  $base  $lavender $crust
+        active_workspace   $base  $surface2 $text
+        inactive_workspace $base  $base     $text
+        urgent_workspace   $base  $red      $crust
+    }
+}
+
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+include /etc/sway/config.d/*
+include $HOME/.config/sway/input.conf
+include $HOME/.config/sway/output.conf
+include $HOME/.config/sway/keybindings.conf
+include $HOME/.config/sway/looknfeel.conf
+include $HOME/.config/sway/rules.conf

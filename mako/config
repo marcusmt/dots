@@ -1,0 +1,32 @@
+# Catppuccin colors
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#b4befe
+progress-color=over #585b70
+
+# Position
+anchor=top-right
+margin=10
+padding=15
+
+# Style
+font=Hack Nerd Font 11
+border-size=2
+border-radius=8
+width=350
+height=150
+
+# Behavior
+default-timeout=5000
+ignore-timeout=0
+
+# Urgency
+[urgency=low]
+border-color=#6c7086
+
+[urgency=normal]
+border-color=#b4befe
+
+[urgency=critical]
+border-color=#f38ba8
+default-timeout=0
