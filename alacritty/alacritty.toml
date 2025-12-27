@@ -14,5 +14,5 @@ family = "Hack Nerd Font"
 style = "Italic"
 
 [terminal.shell]
-program = "/usr/bin/zsh"
-args = ["-l"]
+program = "/usr/bin/fish"
+args = []
