@@ -17,6 +17,7 @@ packages=(
   "lm_sensors"
   "gnome-themes-extra"
   "papirus-icon-theme"
+  "NetworkManager-tui"
 )
 
 # RPM Fusion repos
