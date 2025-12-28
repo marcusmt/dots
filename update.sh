@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
+# Font
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip -O $HOME/Downloads/Hack.zip
 mkdir $HOME/.fonts
 unzip -o $HOME/Downloads/Hack.zip -d $HOME/.fonts
 fc-cache -fv
 rm $HOME/Downloads/Hack.zip
+
+# Bluetooth
+wget https://github.com/pythops/bluetui/releases/latest/download/bluetui-x86_64-linux-gnu -O $HOME/.local/bin/bluetui
+chmod +x $HOME/.local/bin/bluetui
 
 # Starship
 curl -sS https://starship.rs/install.sh | sh -s -- -y
