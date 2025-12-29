@@ -1,0 +1,18 @@
+window-rule {
+    open-floating true
+}
+
+window-rule {
+    match app-id="Alacritty"
+    open-floating false
+}
+
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
