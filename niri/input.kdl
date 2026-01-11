@@ -1,0 +1,13 @@
+input {
+    keyboard {
+        xkb {
+            layout "br"
+        }
+        numlock
+    }
+    touchpad {
+        tap
+    }
+    warp-mouse-to-focus mode="center-xy"
+    focus-follows-mouse
+}

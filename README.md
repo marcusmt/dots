@@ -4,8 +4,12 @@ cd ~/Downloads
 wget https://github.com/marcusmt/dots/archive/refs/heads/main.zip
 unzip dots-main.zip
 cd dots-main/
-./ubuntu/install.sh
+./install.sh
 ```
+
+Bluefin Main Setup
+Stable with Nvidia, has ujust to easily install tools.
+Unbreakable.
 
 X11 Problems:
 Fractional scalling
