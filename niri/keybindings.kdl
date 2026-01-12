@@ -15,6 +15,7 @@ binds {
     Mod+F                 { maximize-column; }
     Mod+R                 { switch-preset-column-width; }
     Mod+V                 { toggle-window-floating; }
+    Mod+L                 { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
 
     Mod+1                 { focus-workspace 1; }
     Mod+2                 { focus-workspace 2; }

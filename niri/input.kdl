@@ -9,5 +9,4 @@ input {
         tap
     }
     warp-mouse-to-focus mode="center-xy"
-    focus-follows-mouse
 }

@@ -8,6 +8,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="brave-browser"
+    open-floating false
+}
+
+window-rule {
     geometry-corner-radius 4
     clip-to-geometry true
 }
