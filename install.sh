@@ -15,5 +15,5 @@ sudo curl -fsSLo /etc/yum.repos.d/brave-browser.repo https://brave-browser-rpm-r
 
 # Install everything in one transaction
 curl -fsSLo /tmp/1password.rpm https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
-rpm-ostree install noctalia-shell fish brave-browser /tmp/1password.rpm
+rpm-ostree install niri noctalia-shell fish brave-browser /tmp/1password.rpm
 
