@@ -1,5 +1,5 @@
 #!/bin/bash
-# Polls for HDMI connection changes and reconfigures displays.
+# Polls for HDMI connection and lid state changes and reconfigures displays.
 # Start once from i3 config: exec --no-startup-id ~/.config/i3/scripts/monitor-watch.sh
 
 EXTERNAL="HDMI-0"
@@ -15,6 +15,12 @@ fi
 echo $$ > "$LOCKFILE"
 trap "rm -f $LOCKFILE" EXIT
 
+lid_is_closed() {
+    local state_file
+    state_file=$(ls /proc/acpi/button/lid/*/state 2>/dev/null | head -1)
+    [ -n "$state_file" ] && grep -q "closed" "$state_file"
+}
+
 apply_dual() {
     xrandr --output "${INTERNAL}" --primary
     nvidia-settings --assign CurrentMetaMode="\
@@ -29,10 +35,23 @@ ${INTERNAL}: 2560x1440_240 +0+0 {ForceCompositionPipeline=On, ForceFullCompositi
     i3-msg restart 2>/dev/null
 }
 
+apply_external_only() {
+    xrandr --output "${EXTERNAL}" --primary
+    nvidia-settings --assign CurrentMetaMode="\
+${EXTERNAL}: 3840x2160_60 +0+0 {ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+    i3-msg restart 2>/dev/null
+}
+
 PREV_STATE=""
 
 while true; do
-    if xrandr | grep -q "^${EXTERNAL} connected"; then
+    EXTERNAL_CONNECTED=false
+    lid_is_closed && LID_CLOSED=true || LID_CLOSED=false
+    xrandr | grep -q "^${EXTERNAL} connected" && EXTERNAL_CONNECTED=true
+
+    if $EXTERNAL_CONNECTED && $LID_CLOSED; then
+        STATE="external_only"
+    elif $EXTERNAL_CONNECTED; then
         STATE="dual"
     else
         STATE="single"
@@ -40,11 +59,11 @@ while true; do
 
     if [ "$STATE" != "$PREV_STATE" ]; then
         sleep 1  # let the driver settle
-        if [ "$STATE" = "dual" ]; then
-            apply_dual
-        else
-            apply_single
-        fi
+        case "$STATE" in
+            dual)          apply_dual ;;
+            single)        apply_single ;;
+            external_only) apply_external_only ;;
+        esac
         PREV_STATE="$STATE"
     fi
 
