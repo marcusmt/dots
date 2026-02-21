@@ -1,0 +1,13 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[mgr]
+prepend_keymap = [
+  # Open a shell in the current directory
+  { on = ["!"], run = "shell '$SHELL'", block = true, desc = "Open shell here" },
+
+  # Ripgrep content search (also bound to 's' by default, this adds Ctrl+F)
+  { on = ["<C-f>"], run = "search rg", desc = "Search file contents (ripgrep)" },
+
+  # Toggle hidden files with dot (in addition to default 'H')
+  { on = ["."], run = "hidden toggle", desc = "Toggle hidden files" },
+]

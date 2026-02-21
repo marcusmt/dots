@@ -1,0 +1,70 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[mgr]
+ratio          = [1, 2, 3]
+sort_by        = "natural"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+scrolloff      = 5
+
+[preview]
+tab_size      = 2
+max_width     = 600
+max_height    = 900
+cache_dir     = ""
+image_filter  = "triangle"
+image_quality = 75
+
+[opener]
+edit = [
+  { run = '$EDITOR "$@"', block = true, desc = "Edit" },
+]
+open = [
+  { run = 'xdg-open "$@"', desc = "Open" },
+]
+view = [
+  { run = 'feh --scale-down --auto-zoom "$@"', orphan = true, desc = "View in feh" },
+]
+extract = [
+  { run = 'unar "$1"', desc = "Extract here" },
+]
+
+[open]
+rules = [
+  # Text / code — edit in $EDITOR
+  { mime = "text/*",                      use = "edit" },
+  { mime = "application/json",            use = "edit" },
+  { mime = "application/toml",            use = "edit" },
+  { mime = "application/x-yaml",          use = "edit" },
+  { mime = "application/xml",             use = "edit" },
+
+  # Images — open in feh
+  { mime = "image/*",                     use = "view" },
+
+  # Archives — extract in place
+  { mime = "application/zip",             use = "extract" },
+  { mime = "application/x-tar",           use = "extract" },
+  { mime = "application/x-bzip2",         use = "extract" },
+  { mime = "application/gzip",            use = "extract" },
+  { mime = "application/x-xz",            use = "extract" },
+  { mime = "application/zstd",            use = "extract" },
+  { mime = "application/x-7z-compressed", use = "extract" },
+  { mime = "application/x-rar",           use = "extract" },
+
+  # Fallback — system default
+  { mime = "*", use = "open" },
+]
+
+[tasks]
+micro_workers    = 10
+macro_workers    = 25
+bizarre_retry    = 5
+image_alloc      = 536870912  # 512 MiB
+image_bound      = [0, 0]
+suppress_preload = false
+
+[log]
+enabled = false

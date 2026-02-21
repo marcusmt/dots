@@ -18,6 +18,10 @@ packages=(
   "adw-gtk3-theme"
   "maim"
   "ksnip"
+  "7zip"
+  "fd"
+  "xclip"
+  "thunar"
 )
 
 sudo dnf update -y && sudo dnf upgrade -y
@@ -52,4 +56,5 @@ cp -r fish ~/.config/
 cp -r i3 ~/.config/
 cp -r picom ~/.config/
 cp -r rofi ~/.config/
+cp -r yazi ~/.config/
 cp -r gtk* ~/.config/

@@ -1,0 +1,120 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+# Kanagawa theme for yazi
+# https://github.com/rebelot/kanagawa.nvim
+
+[mgr]
+cwd             = { fg = "#7E9CD8" }                          # crystalBlue
+
+hovered         = { fg = "#DCD7BA", bg = "#2D4F67" }          # fujiWhite on waveBlue2
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#E6C384", italic = true, bold = true } # carpYellow
+find_position = { fg = "#DCD7BA", bg = "#2D4F67", bold = true }
+
+marker_selected = { fg = "#98BB6C", bg = "#98BB6C" }           # springGreen
+marker_copied   = { fg = "#E6C384", bg = "#E6C384" }           # carpYellow
+marker_cut      = { fg = "#C34043", bg = "#C34043" }           # autumnRed
+
+tab_active   = { fg = "#16161D", bg = "#7E9CD8", bold = true } # ink on crystalBlue
+tab_inactive = { fg = "#727169", bg = "#1F1F28" }              # fujiGray on sumiInk1
+tab_width    = 1
+
+count_copied = { fg = "#16161D", bg = "#E6C384" }
+count_cut    = { fg = "#DCD7BA", bg = "#C34043" }
+
+border_symbol = "│"
+border_style  = { fg = "#54546D" }                             # sumiInk4
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#1F1F28", bg = "#1F1F28" }
+
+mode_normal = { fg = "#16161D", bg = "#98BB6C", bold = true }  # ink on springGreen
+mode_select = { fg = "#16161D", bg = "#E6C384", bold = true }  # ink on carpYellow
+mode_unset  = { fg = "#16161D", bg = "#957FB8", bold = true }  # ink on oniViolet
+
+progress_label  = { fg = "#DCD7BA", bold = true }
+progress_normal = { fg = "#7E9CD8", bg = "#1F1F28" }
+progress_error  = { fg = "#C34043", bg = "#1F1F28" }
+
+permissions_t = { fg = "#727169" }  # fujiGray
+permissions_r = { fg = "#E6C384" }  # carpYellow
+permissions_w = { fg = "#C34043" }  # autumnRed
+permissions_x = { fg = "#98BB6C" }  # springGreen
+permissions_s = { fg = "#957FB8" }  # oniViolet
+
+[input]
+border   = { fg = "#7E9CD8" }
+title    = { fg = "#DCD7BA" }
+value    = { fg = "#DCD7BA" }
+selected = { fg = "#16161D", bg = "#7E9CD8" }
+
+[completion]
+border   = { fg = "#7E9CD8" }
+active   = { fg = "#DCD7BA", bg = "#2D4F67" }
+inactive = { fg = "#727169" }
+
+[tasks]
+border  = { fg = "#7E9CD8" }
+title   = { fg = "#DCD7BA" }
+hovered = { fg = "#DCD7BA", underline = true }
+
+[which]
+mask            = { bg = "#16161D" }
+cand            = { fg = "#7FB4CA" }   # springBlue
+rest            = { fg = "#727169" }   # fujiGray
+desc            = { fg = "#957FB8" }   # oniViolet
+separator       = "  "
+separator_style = { fg = "#54546D" }
+
+[select]
+border   = { fg = "#7E9CD8" }
+active   = { fg = "#E6C384" }          # carpYellow
+inactive = { fg = "#727169" }
+
+[filetype]
+rules = [
+  # Images
+  { mime = "image/*", fg = "#D27E99" },          # sakuraPink
+
+  # Audio / video
+  { mime = "audio/*", fg = "#FFA066" },          # surimiOrange
+  { mime = "video/*", fg = "#FFA066" },
+
+  # Archives
+  { mime = "application/zip",              fg = "#C34043" },  # autumnRed
+  { mime = "application/x-tar",            fg = "#C34043" },
+  { mime = "application/x-bzip2",          fg = "#C34043" },
+  { mime = "application/gzip",             fg = "#C34043" },
+  { mime = "application/x-xz",             fg = "#C34043" },
+  { mime = "application/zstd",             fg = "#C34043" },
+  { mime = "application/x-7z-compressed",  fg = "#C34043" },
+  { mime = "application/x-rar",            fg = "#C34043" },
+
+  # Documents
+  { mime = "application/pdf", fg = "#E46876" },  # waveRed
+
+  # Text / markup
+  { mime = "text/*",          fg = "#98BB6C" },  # springGreen
+
+  # Source files by extension
+  { name = "*.rs",   fg = "#FFA066" },  # surimiOrange
+  { name = "*.py",   fg = "#E6C384" },  # carpYellow
+  { name = "*.js",   fg = "#E6C384" },
+  { name = "*.ts",   fg = "#7E9CD8" },  # crystalBlue
+  { name = "*.sh",   fg = "#76946A" },  # autumnGreen
+  { name = "*.fish", fg = "#76946A" },
+  { name = "*.bash", fg = "#76946A" },
+  { name = "*.html", fg = "#E46876" },  # waveRed
+  { name = "*.css",  fg = "#6A9589" },  # waveAqua1
+  { name = "*.toml", fg = "#957FB8" },  # oniViolet
+  { name = "*.yaml", fg = "#957FB8" },
+  { name = "*.yml",  fg = "#957FB8" },
+  { name = "*.json", fg = "#DCA561" },  # autumnYellow
+  { name = "*.md",   fg = "#7AA89F" },  # waveAqua2
+
+  # Default
+  { name = "*", fg = "#DCD7BA" },       # fujiWhite
+]
