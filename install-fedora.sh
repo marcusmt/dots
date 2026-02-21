@@ -22,6 +22,7 @@ packages=(
   "fd"
   "xclip"
   "thunar"
+  "neovim"
 )
 
 sudo dnf update -y && sudo dnf upgrade -y

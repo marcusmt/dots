@@ -15,3 +15,10 @@ cargo install --force yazi-build
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
+
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+nvim
+
+cp nvim/kanagawa-theme.lua ~/.config/nvim/lua/plugins/
