@@ -1,0 +1,38 @@
+include $HOME/.config/i3/keybinds.conf
+include $HOME/.config/i3/looknfeel.conf
+
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec --no-startup-id ~/.config/i3/scripts/monitor-watch.sh
+
+exec --no-startup-id dunst
+exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+exec --no-startup-id /usr/libexec/polkit-mate-authentication-agent-1
+
+set $sakuraPink   #D27E99
+set $surimiOrange #FFA066
+set $autumnRed    #C34043
+set $springBlue   #7FB4CA
+set $fujiWhite    #DCD7BA
+set $fujiGray     #727169
+set $sumiInk0     #1F1F28
+set $sumiInk1     #16161D
+set $sumiInk3     #363646
+
+bar {
+    font pango:Hack Nerd Font 12
+    status_command ~/.config/i3/scripts/i3status_wrapper.py
+    output primary
+    position top
+    colors {
+        background         $sumiInk0
+        statusline         $fujiWhite
+        focused_statusline $fujiWhite
+        focused_separator  $sumiInk0
+
+        # target           border      bg           text
+        focused_workspace  $sumiInk0   $springBlue  $sumiInk1
+        active_workspace   $sumiInk0   $sumiInk3    $fujiWhite
+        inactive_workspace $sumiInk0   $sumiInk0    $fujiWhite
+        urgent_workspace   $sumiInk0   $autumnRed   $sumiInk1
+    }
+}

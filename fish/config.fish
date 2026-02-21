@@ -3,7 +3,7 @@ set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Append common directories for executable files to $PATH
-fish_add_path ~/.local/bin ~/.cargo/bin /opt/nvim/bin
+fish_add_path ~/.local/bin ~/.cargo/bin
 
 ## Useful aliases
 # Replace ls with eza
