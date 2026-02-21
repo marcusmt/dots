@@ -1,22 +1,52 @@
-# Dots
-```shell
-cd ~/Downloads
-wget https://github.com/marcusmt/dots/archive/refs/heads/main.zip
-unzip dots-main.zip
-cd dots-main/
-./install.sh
+# dots
+
+Personal dotfiles for a Fedora + i3 desktop setup. Themed around [Kanagawa](https://github.com/rebelot/kanagawa.nvim).
+
+## What's included
+
+| Config | Tool |
+|--------|------|
+| `alacritty/` | Terminal emulator |
+| `dunst/` | Notification daemon |
+| `fish/` | Shell (with eza, bat, zoxide, fzf, starship) |
+| `i3/` | Window manager, status bar, keybinds, scripts |
+| `picom/` | Compositor (transparency/shadows) |
+| `rofi/` | App launcher |
+
+### i3 scripts
+
+- `brightness_control.sh` — brightness up/down via media keys
+- `volume_notify.sh` / `mic_notify.sh` — OSD notifications on audio changes
+- `monitor-hotplug.sh` / `monitor-watch.sh` — auto-detect monitor plug/unplug
+- `i3status_wrapper.py` — custom i3bar status line
+
+## Install
+
+### 1. Clone and run the installer
+
+```sh
+git clone https://github.com/marcusmt/dots.git ~/dots
+cd ~/dots
+./install-fedora.sh
 ```
 
-Bluefin Main Setup
-Stable with Nvidia, has ujust to easily install tools.
-Unbreakable.
+This will:
+- Update the system and install all required packages via `dnf`
+- Install Rust (if not present)
+- Install 1Password, Brave, and Claude CLI (skipped if already installed)
+- Copy all configs to `~/.config/`
 
-X11 Problems:
-Fractional scalling
-Scaling in X11 is impossible. Even when using single monitor layout. It's annoying to control the scaling for two screens with different resolutions. The X dpi value must be updated when switching layouts however the apps do not adapt to the switch. It's needed to restart them.
-This became the reason why X11 is not working anymore for me. Tearing and stuttering are really annoying when reading code and not even single monitor setup can solve it fully.
-However X11 is way easier to maintain and confgure than Wayland. Everything just works.
+### 2. Install extra tools
 
-Wayland Problems:
-Several applications are not ready for it. Browsers, for example, can't reproduce videos well. I have to switch the browser to xwayland. Defeating the purpose of using Wayland...
-Screen sharing is terrible.
+```sh
+./update.sh
+```
+
+This installs:
+- **Hack Nerd Font** (to `~/.fonts`)
+- **Starship** prompt
+- **Zoxide** (`z` as a smart `cd`)
+- **eza**, **bat**, **ripgrep** via Cargo
+- **fzf**
+- Sets the GTK theme to `adw-gtk3-dark`
+
