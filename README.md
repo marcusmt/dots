@@ -27,7 +27,7 @@ Personal dotfiles for a Fedora + i3 desktop setup. Themed around [Kanagawa](http
 ```sh
 git clone https://github.com/marcusmt/dots.git ~/dots
 cd ~/dots
-./install-fedora.sh
+./install-_SELECT_.sh
 ```
 
 This will:
