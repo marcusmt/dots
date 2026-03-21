@@ -13,11 +13,6 @@ if ! command -v 1password &>/dev/null; then
   rm $HOME/Downloads/1password.rpm
 fi
 
-# Brave - skip if already installed
-if ! command -v brave-browser &>/dev/null; then
-  curl -fsSL https://dl.brave.com/install.sh | sh
-fi
-
 # Claude - skip if already installed
 if ! command -v claude &>/dev/null; then
   curl -fsSL https://claude.ai/install.sh | bash

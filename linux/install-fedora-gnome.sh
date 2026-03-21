@@ -18,6 +18,6 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ./install.sh
 ./update.sh
 
-cp -r alacritty ~/.config/
-cp -r fish ~/.config/
+cp -r ../alacritty ~/.config/
+cp -r ../fish ~/.config/
 cp -r yazi ~/.config/

@@ -18,4 +18,4 @@ rm -rf ~/.config/nvim/.git
 
 nvim
 
-cp nvim/kanagawa-theme.lua ~/.config/nvim/lua/plugins/
+cp ../nvim/kanagawa-theme.lua ~/.config/nvim/lua/plugins/
