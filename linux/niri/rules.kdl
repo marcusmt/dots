@@ -1,0 +1,19 @@
+window-rule {
+    open-floating true
+}
+
+window-rule {
+    match app-id="ghostty"
+    match app-id="google-chrome"
+    open-floating false
+}
+
+window-rule {
+    geometry-corner-radius 4
+    clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}

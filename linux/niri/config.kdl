@@ -1,0 +1,9 @@
+include "env.kdl"
+include "input.kdl"
+include "keybinds.kdl"
+include "looknfeel.kdl"
+include "noctalia.kdl"
+include "rules.kdl"
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+prefer-no-csd
