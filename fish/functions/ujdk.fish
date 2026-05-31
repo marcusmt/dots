@@ -5,7 +5,7 @@ function ujdk
         set -l remote_ver (string split " " $data)[1]
         set -l url (string split " " $data)[2]
 
-        if test -f "$dir/.version"; and test (cat "$dir/.version") = "$remote_ver"
+        if test -f "$dir/.version"; and test (command cat "$dir/.version") = "$remote_ver"
             continue
         end
 

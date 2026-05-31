@@ -11,7 +11,6 @@ packages=(
   "feh"
   "alsa-sof-firmware"
   "nmtui"
-  "alacritty"
   "arandr"
   "mate-polkit"
   "pavucontrol"

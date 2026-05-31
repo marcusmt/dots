@@ -1,24 +1,28 @@
 # dots
 
-Personal dotfiles for a Fedora + i3 desktop setup. Themed around [Kanagawa](https://github.com/rebelot/kanagawa.nvim).
+Personal dotfiles for a Fedora desktop setup. Themed around [Kanagawa](https://github.com/rebelot/kanagawa.nvim).
 
 ## What's included
 
 | Config | Tool |
 |--------|------|
 | `alacritty/` | Terminal emulator |
-| `dunst/` | Notification daemon |
+| `ghostty/` | Terminal emulator (Wayland) |
 | `fish/` | Shell (with eza, bat, zoxide, fzf, starship) |
-| `i3/` | Window manager, status bar, keybinds, scripts |
-| `picom/` | Compositor (transparency/shadows) |
-| `rofi/` | App launcher |
+| `nvim/` | Neovim theme (LazyVim + Kanagawa) |
+| `linux/i3-setup/dunst/` | Notification daemon |
+| `linux/i3-setup/i3/` | Window manager, status bar, keybinds, scripts |
+| `linux/i3-setup/picom/` | Compositor (transparency/shadows) |
+| `linux/i3-setup/rofi/` | App launcher |
+| `linux/niri/` | Wayland compositor (niri) |
+| `linux/yazi/` | File manager |
 
 ### i3 scripts
 
 - `brightness_control.sh` — brightness up/down via media keys
 - `volume_notify.sh` / `mic_notify.sh` — OSD notifications on audio changes
-- `monitor-hotplug.sh` / `monitor-watch.sh` — auto-detect monitor plug/unplug
-- `i3status_wrapper.py` — custom i3bar status line
+- `monitor-watch.sh` — auto-detect monitor plug/unplug and reconfigure displays
+- `i3status_wrapper.py` — custom i3bar status line with PipeWire volume
 
 ## Install
 
@@ -26,14 +30,16 @@ Personal dotfiles for a Fedora + i3 desktop setup. Themed around [Kanagawa](http
 
 ```sh
 git clone https://github.com/marcusmt/dots.git ~/dots
-cd ~/dots
-./install-_SELECT_.sh
+cd ~/dots/linux
+./install-fedora-i3.sh    # i3 + X11 setup
+# or
+./install-fedora-gnome.sh # GNOME setup
 ```
 
 This will:
 - Update the system and install all required packages via `dnf`
 - Install Rust (if not present)
-- Install 1Password, Brave, and Claude CLI (skipped if already installed)
+- Install 1Password and Claude CLI (skipped if already installed)
 - Copy all configs to `~/.config/`
 
 ### 2. Install extra tools
@@ -42,11 +48,9 @@ This will:
 ./update.sh
 ```
 
-This installs:
+This installs (skipped if already present):
 - **Hack Nerd Font** (to `~/.fonts`)
 - **Starship** prompt
 - **Zoxide** (`z` as a smart `cd`)
-- **eza**, **bat**, **ripgrep** via Cargo
-- **fzf**
-- Sets the GTK theme to `adw-gtk3-dark`
-
+- **eza**, **bat**, **ripgrep**, **yazi** via Cargo
+- Sets up **LazyVim** with Kanagawa theme
