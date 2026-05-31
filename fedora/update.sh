@@ -17,11 +17,4 @@ if ! command -v zoxide &>/dev/null; then
 fi
 
 ../common/rust-tools.sh
-
-if [ ! -d ~/.config/nvim ]; then
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-  rm -rf ~/.config/nvim/.git
-  nvim
-fi
-
-cp ../nvim/kanagawa-theme.lua ~/.config/nvim/lua/plugins/
+../common/nvim.sh

@@ -14,7 +14,7 @@ gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 ./1password.sh
-./claude.sh
+../common/claude.sh
 ./update.sh
 
 cp -r ../fish ~/.config/
