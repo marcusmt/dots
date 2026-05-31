@@ -13,16 +13,21 @@ declare -a packages=(
   ttf-hack-nerd
   rsync
   neovim
+  fzf
 )
 
 paru -S --needed --noconfirm "${packages[@]}"
 
-# Current Browser
+../common/rust-tools.sh
+
+# Browser
 curl -fsS https://dl.brave.com/install.sh | sh
 
 # Neovim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
+if [ ! -d ~/.config/nvim ]; then
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  rm -rf ~/.config/nvim/.git
+fi
 
 # AI
 curl -fsSL https://claude.ai/install.sh | bash

@@ -18,7 +18,6 @@ packages=(
   "maim"
   "ksnip"
   "7zip"
-  "fd"
   "xclip"
   "thunar"
   "neovim"

@@ -3,7 +3,6 @@
 packages=(
   "fish"
   "alacritty"
-  "fd"
   "neovim"
   "gnome-themes-extra"
   "fzf"

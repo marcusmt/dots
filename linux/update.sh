@@ -16,10 +16,7 @@ if ! command -v zoxide &>/dev/null; then
   curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 fi
 
-command -v eza   &>/dev/null || cargo install --locked eza
-command -v bat   &>/dev/null || cargo install --locked bat
-command -v rg    &>/dev/null || cargo install --locked ripgrep
-command -v yazi  &>/dev/null || cargo install --locked yazi-fm yazi-cli
+../common/rust-tools.sh
 
 if [ ! -d ~/.config/nvim ]; then
   git clone https://github.com/LazyVim/starter ~/.config/nvim
