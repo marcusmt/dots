@@ -25,12 +25,6 @@ Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://gi
 | `linux/i3-setup/picom/` | Compositor |
 | `linux/i3-setup/rofi/` | App launcher |
 
-### Desktop (Niri / Wayland)
-
-| Config | Tool |
-|--------|------|
-| `linux/niri/` | Niri Wayland compositor |
-
 ### Other
 
 | Config | Tool |
