@@ -1,20 +1,43 @@
 # dots
 
-Personal dotfiles for a Fedora desktop setup. Themed around [Kanagawa](https://github.com/rebelot/kanagawa.nvim).
+Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://github.com/rebelot/kanagawa.nvim).
 
 ## What's included
 
+### Shell & Editor
+
 | Config | Tool |
 |--------|------|
-| `alacritty/` | Terminal emulator |
-| `ghostty/` | Terminal emulator (Wayland) |
-| `fish/` | Shell (with eza, bat, zoxide, fzf, starship) |
+| `fish/` | Fish shell (with eza, bat, zoxide, fzf, starship) |
+| `zsh/` | Zsh shell (with eza, bat, zoxide, fzf, starship, plugins) |
 | `nvim/` | Neovim theme (LazyVim + Kanagawa) |
-| `linux/i3-setup/dunst/` | Notification daemon |
+
+### Terminal Emulators
+
+| Config | Tool |
+|--------|------|
+| `alacritty/` | Alacritty |
+| `ghostty/` | Ghostty (Wayland) |
+
+### Desktop (i3 / X11)
+
+| Config | Tool |
+|--------|------|
 | `linux/i3-setup/i3/` | Window manager, status bar, keybinds, scripts |
-| `linux/i3-setup/picom/` | Compositor (transparency/shadows) |
+| `linux/i3-setup/dunst/` | Notification daemon |
+| `linux/i3-setup/picom/` | Compositor |
 | `linux/i3-setup/rofi/` | App launcher |
-| `linux/niri/` | Wayland compositor (niri) |
+
+### Desktop (Niri / Wayland)
+
+| Config | Tool |
+|--------|------|
+| `linux/niri/` | Niri Wayland compositor |
+
+### Other
+
+| Config | Tool |
+|--------|------|
 | `linux/yazi/` | File manager |
 
 ### i3 scripts
@@ -26,7 +49,7 @@ Personal dotfiles for a Fedora desktop setup. Themed around [Kanagawa](https://g
 
 ## Install
 
-### 1. Clone and run the installer
+### Fedora
 
 ```sh
 git clone https://github.com/marcusmt/dots.git ~/dots
@@ -36,15 +59,26 @@ cd ~/dots/linux
 ./install-fedora-gnome.sh # GNOME setup
 ```
 
-This will:
-- Update the system and install all required packages via `dnf`
-- Install Rust (if not present)
-- Install 1Password and Claude CLI (skipped if already installed)
-- Copy all configs to `~/.config/`
+For NVIDIA drivers:
+```sh
+./fedora/nvidia.sh
+# or from linux/
+../fedora/nvidia.sh
+```
 
-### 2. Install extra tools
+### Arch Linux
 
 ```sh
+cd ~/dots/arch
+./paru.sh          # install paru AUR helper first
+./arch.sh          # install packages, Brave, Neovim, Claude
+./1password.sh     # install 1Password from AUR
+```
+
+### Extra tools (Fedora)
+
+```sh
+cd ~/dots/linux
 ./update.sh
 ```
 
@@ -54,3 +88,11 @@ This installs (skipped if already present):
 - **Zoxide** (`z` as a smart `cd`)
 - **eza**, **bat**, **ripgrep**, **yazi** via Cargo
 - Sets up **LazyVim** with Kanagawa theme
+
+### Zsh setup
+
+```sh
+cd ~/dots/zsh
+./zsh.sh           # install plugins, starship, zoxide, cargo tools
+cp .zshrc ~/.zshrc
+```
