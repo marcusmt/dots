@@ -15,13 +15,13 @@ Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://gi
 
 ```sh
 git clone https://github.com/marcusmt/dots.git ~/dots
-cd ~/dots/linux
-./install-fedora-gnome.sh
+cd ~/dots/fedora
+./gnome.sh
 ```
 
 For NVIDIA drivers:
 ```sh
-../fedora/nvidia.sh
+./nvidia.sh
 ```
 
 ### Arch Linux
@@ -33,10 +33,10 @@ cd ~/dots/arch
 ./1password.sh     # install 1Password from AUR
 ```
 
-### Extra tools (Fedora)
+### Extra tools
 
 ```sh
-cd ~/dots/linux
+cd ~/dots/fedora
 ./update.sh
 ```
 
