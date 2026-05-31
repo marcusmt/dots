@@ -9,7 +9,6 @@ Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://gi
 | Config | Tool |
 |--------|------|
 | `fish/` | Fish shell (with eza, bat, zoxide, fzf, starship) |
-| `zsh/` | Zsh shell (with eza, bat, zoxide, fzf, starship, plugins) |
 | `nvim/` | Neovim theme (LazyVim + Kanagawa) |
 
 ### Terminal Emulators
@@ -87,10 +86,3 @@ This installs (skipped if already present):
 - **eza**, **bat**, **ripgrep**, **fd** via Cargo
 - Sets up **LazyVim** with Kanagawa theme
 
-### Zsh setup
-
-```sh
-cd ~/dots/zsh
-./zsh.sh           # install plugins, starship, zoxide, cargo tools
-cp .zshrc ~/.zshrc
-```
