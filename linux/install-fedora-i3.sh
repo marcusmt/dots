@@ -3,7 +3,6 @@
 packages=(
   "git"
   "fish"
-  "alacritty"
   "picom"
   "rofi"
   "iwl*-firmware"
@@ -30,7 +29,6 @@ sudo dnf install -y "${packages[@]}"
 ./install.sh
 ./update.sh
 
-cp -r ../alacritty ~/.config/
 cp -r i3-setup/dunst ~/.config/
 cp -r ../fish ~/.config/
 cp -r i3-setup/i3 ~/.config/
