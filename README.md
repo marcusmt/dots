@@ -38,7 +38,6 @@ Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://gi
 
 | Config | Tool |
 |--------|------|
-| `linux/yazi/` | File manager |
 
 ### i3 scripts
 
@@ -86,7 +85,7 @@ This installs (skipped if already present):
 - **Hack Nerd Font** (to `~/.fonts`)
 - **Starship** prompt
 - **Zoxide** (`z` as a smart `cd`)
-- **eza**, **bat**, **ripgrep**, **yazi** via Cargo
+- **eza**, **bat**, **ripgrep**, **fd** via Cargo
 - Sets up **LazyVim** with Kanagawa theme
 
 ### Zsh setup

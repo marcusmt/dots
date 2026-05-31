@@ -36,4 +36,3 @@ cp -r ../fish ~/.config/
 cp -r i3-setup/i3 ~/.config/
 cp -r i3-setup/picom ~/.config/
 cp -r i3-setup/rofi ~/.config/
-cp -r yazi ~/.config/
