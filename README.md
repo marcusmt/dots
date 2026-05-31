@@ -15,7 +15,6 @@ Personal dotfiles for Fedora and Arch Linux. Themed around [Kanagawa](https://gi
 
 | Config | Tool |
 |--------|------|
-| `ghostty/` | Ghostty (Wayland) |
 
 ### Desktop (i3 / X11)
 
